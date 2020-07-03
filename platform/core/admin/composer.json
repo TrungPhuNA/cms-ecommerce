@@ -1,0 +1,27 @@
+{
+    "name": "core/admin",
+    "description": "Core Admin",
+    "type": "package",
+    "version": "dev",
+    "autoload": {
+        "psr-4": {
+            "Core\\Admin\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrungPhuNA",
+            "email": "phupt.humg.94@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Core\\Admin\\AdminServiceProvider"
+            ]
+        }
+    }
+}
