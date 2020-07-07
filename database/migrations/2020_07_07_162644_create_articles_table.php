@@ -15,6 +15,17 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->string('a_name');
+            $table->string('a_slug')->index();
+            $table->tinyInteger('a_hot')->default(0)->index();
+            $table->tinyInteger('a_status')->default(1)->index();
+            $table->integer('a_menu_id')->index()->default(0);
+            $table->integer('a_view')->default(0);
+            $table->mediumText('a_description')->nullable();
+            $table->string('a_avatar')->nullable();
+            $table->text('a_content')->nullable();
+            $table->string('a_title_seo')->nullable();
+            $table->string('a_description_seo')->nullable();
             $table->timestamps();
         });
     }
