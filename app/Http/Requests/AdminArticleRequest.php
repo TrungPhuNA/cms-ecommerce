@@ -13,7 +13,7 @@ class AdminArticleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class AdminArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'a_name'        => 'required|unique:articles,a_name,' . $this->id,
+            'a_description' => 'required',
+            'a_content'     => 'required',
+            'a_menu_id'     => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'a_name.required'        => 'Dữ liệu không được để trống',
+            'a_name.unique'          => 'Dữ liệu đã tồn tại',
+            'a_description.required' => 'Dữ liệu không được để trống',
+            'a_menu_id.required'     => 'Dữ liệu không được để trống',
+            'a_content.required'     => 'Dữ liệu không được để trống',
         ];
     }
 }
