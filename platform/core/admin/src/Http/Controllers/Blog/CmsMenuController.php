@@ -13,7 +13,7 @@ class CmsMenuController extends CmsAdminController
 {
     public function index()
     {
-        $menus    = Menu::all();
+        MenusService::getInstance()->recursive(0, 1, $menus);
         $viewData = [
             'menus' => $menus
         ];
@@ -22,7 +22,7 @@ class CmsMenuController extends CmsAdminController
 
     public function create()
     {
-        $menus = MenusService::getInstance()->getListMenus();
+         MenusService::getInstance()->recursive(0, 1, $menus);
         return view('admin::pages.blog.menu.create', compact('menus'));
     }
 
@@ -42,7 +42,7 @@ class CmsMenuController extends CmsAdminController
     public function edit($id)
     {
         $menu     = Menu::findOrFail($id);
-        $menus    = MenusService::getInstance()->getListMenus();
+        MenusService::getInstance()->recursive(0, 1, $menus);
         $viewData = [
             'menu'  => $menu,
             'menus' => $menus

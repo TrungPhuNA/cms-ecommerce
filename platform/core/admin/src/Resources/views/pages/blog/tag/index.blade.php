@@ -1,18 +1,18 @@
 @extends('admin::layouts.app_cms_admin')
-@section('title_page','Danh sách menu')
+@section('title_page','Danh sách tag bài viết')
 @section('content')
     <div class="container-fluid">
         <!-- breadcrumb -->
         <div class="breadcrumb-header justify-content-between">
             <div class="my-auto">
                 <div class="d-flex">
-                    <h4 class="content-title mb-0 my-auto">Quảng lý menu</h4>
+                    <h4 class="content-title mb-0 my-auto">Quảng lý tag bài viết</h4>
                     <span class="text-muted mt-1 tx-13 ml-2 mb-0">/ Index</span>
                 </div>
             </div>
             <div class="d-flex my-xl-auto right-content">
                 <div class="pr-1 mb-3 mb-xl-0">
-                    <a href="{{ route('cms_get.menu.create') }}" class="btn btn-info  mr-2"><i class="la la-edit"></i> Thêm mới</a>
+                    <a href="{{ route('cms_get.tag.create') }}" class="btn btn-info  mr-2"><i class="la la-edit"></i> Thêm mới</a>
                 </div>
                 <div class="pr-1 mb-3 mb-xl-0">
                     <button type="button" class="btn btn-danger mr-2"><i class="la la-refresh"></i> Reload</button>
@@ -44,44 +44,42 @@
                                         </label>
                                     </th>
                                     <th>Name</th>
-                                    <th>Parent</th>
                                     <th>Seo</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($menus as $menu)
+                                    @forelse($tags as $tag)
                                     <tr>
                                         <td scope="row">
                                             <label class="box-checkbox">
                                                 <input type="checkbox" name="listID[]" class="checkbox"
-                                                       value="{{ $menu->id }}">
+                                                       value="{{ $tag->id }}">
                                                 <span class="checkmark"></span>
                                             </label>
                                         </td>
-{{--                                        <th scope="row">#{{ $menu->id }}</th>--}}
                                         <td>
-                                            <?php $str = '' ;for($i = 0; $i < $menu->level; $i ++){ echo $str; $str .= '---- '; }?>
-                                            {{ $menu->mn_name }}
+                                            {{ $tag->t_name }}
                                         </td>
-                                        <td>{{ $menu->parent->mn_name ?? "__ROOT__" }} </td>
                                         <td>
                                             <div class="existed-seo-meta">
-                                                <span class="page-title-seo title_seo">{{ $menu->mn_title_seo }}</span>
+                                                <span class="page-title-seo title_seo">{{ $tag->t_title_seo }}</span>
                                                 <div class="page-url-seo ws-nm">
-                                                    <p>http://cms-laravel.net/bai-viet/<span class="slug">{{ $menu->mn_slug }}</span></p>
+                                                    <p>http://cms-laravel.net/bai-viet/<span class="slug">{{ $tag->t_slug }}</span></p>
                                                 </div>
                                                 <div class="ws-nm">
-                                                    <span style="color: #70757a;">{{ $menu->created_at->format('d-m-Y')}} - </span>
-                                                    <span class="page-description-seo description_seo">{{ $menu->mn_description_seo }}</span>
+                                                    <span style="color: #70757a;">{{ $tag->created_at->format('d-m-Y')}} - </span>
+                                                    <span class="page-description-seo description_seo">{{ $tag->t_description_seo }}</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><span class="btn btn-sm {{ $menu->getStatus($menu->mn_status)['class'] }}">{{ $menu->getStatus($menu->mn_status)['name'] }}</span></td>
                                         <td>
-                                            <a href="{{ route('cms_get.menu.edit', $menu->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>
-                                            <a href="{{ route('cms_get.menu.delete', $menu->id) }}" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>
+                                            <span class="btn btn-sm {{ $tag->getStatus($tag->t_status)['class'] }}">{{ $tag->getStatus($tag->t_status)['name'] }}</span>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('cms_get.tag.edit', $tag->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>
+                                            <a href="{{ route('cms_get.tag.delete', $tag->id) }}" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>
                                         </td>
                                     </tr>
                                     @empty

@@ -20,6 +20,25 @@ class MenusService
 
     public function getListMenus()
     {
-        return Menu::all();
+        return Menu::with('parent:id,mn_name')->get();
+    }
+
+    public function recursive($parents = 0 ,$level = 1 ,&$listMenusSort)
+    {
+        $categories = $this->getListMenus();
+        if(count($categories) > 0 )
+        {
+            foreach ($categories as $key => $value) {
+                if($value->mn_parent_id  == $parents)
+                {
+                    $value->level = $level;
+                    $listMenusSort[] = $value;
+                    unset($categories[$key]);
+                    $parent = $value->id;
+
+                    $this->recursive( $parent ,$level + 1 , $listMenusSort);
+                }
+            }
+        }
     }
 }

@@ -14963,6 +14963,40 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/components/check.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/components/check.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {var Check = {
+  init: function init() {
+    this.clickAll();
+  },
+  clickAll: function clickAll() {
+    $("#checkAll").change(function () {
+      var checked = $(this).is(':checked');
+
+      if (checked) {
+        $(".checkbox").each(function () {
+          $(this).prop("checked", true);
+        });
+      } else {
+        $(".checkbox").each(function () {
+          $(this).prop("checked", false);
+        });
+      }
+    });
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (Check);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./resources/js/admin/components/confirm_delete.js":
 /*!*********************************************************!*\
   !*** ./resources/js/admin/components/confirm_delete.js ***!
@@ -15286,6 +15320,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_seo__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/seo */ "./resources/js/admin/components/seo.js");
 /* harmony import */ var _components_run_messages__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/run_messages */ "./resources/js/admin/components/run_messages.js");
 /* harmony import */ var _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/confirm_delete */ "./resources/js/admin/components/confirm_delete.js");
+/* harmony import */ var _components_check__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/check */ "./resources/js/admin/components/check.js");
  // import './../../../library/admin/plugins/jquery/jquery.min.js'
 
  // import './../../../library/admin/plugins/ionicons/ionicons.js'
@@ -15326,9 +15361,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 $(function () {
   _components_count_char__WEBPACK_IMPORTED_MODULE_26__["default"].init();
   _components_seo__WEBPACK_IMPORTED_MODULE_27__["default"].init();
+  _components_check__WEBPACK_IMPORTED_MODULE_30__["default"].init();
   _components_run_messages__WEBPACK_IMPORTED_MODULE_28__["default"].init();
   _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__["default"].init();
 });

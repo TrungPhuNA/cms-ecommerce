@@ -5,7 +5,7 @@ namespace App\Models\Blog;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class Menu extends Model
+class Tag extends Model
 {
     protected $guarded = [''];
     const STATUS_PUBLIC = 3;
@@ -26,13 +26,8 @@ class Menu extends Model
         ],
     ];
 
-    public function parent()
-    {
-        return $this->belongsTo(Menu::class,'mn_parent_id','id');
-    }
-
     public function getStatus()
     {
-        return Arr::get($this->status, $this->mn_status,'[N\A]');
+        return Arr::get($this->status, $this->t_status,'[N\A]');
     }
 }

@@ -1,0 +1,69 @@
+/*!
+  * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+
+/*!
+ * Chart.js
+ * http://chartjs.org/
+ * Version: 2.7.1
+ *
+ * Copyright 2017 Nick Downie
+ * Released under the MIT license
+ * https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
+ */
+
+/*!
+ * JQVMap: jQuery Vector Map Library
+ * @author JQVMap <me@peterschmalfeldt.com>
+ * @version 1.5.0
+ * @link http://jqvmap.com
+ * @license https://github.com/manifestinteractive/jqvmap/blob/master/LICENSE
+ * @builddate 2016/03/15
+ */
+
+/*!
+ * Sizzle CSS Selector Engine v2.3.5
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2020-03-14
+ */
+
+/*!
+ * jQuery JavaScript Library v3.5.1
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2020-05-04T22:49Z
+ */
+
+/*!
+ * jQuery Mousewheel 3.1.13
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license
+ * http://jquery.org/license
+ */
+
+/*!
+ * jquery.sumoselect - v3.0.3
+ * http://hemantnegi.github.io/jquery.sumoselect
+ * 2016-12-12
+ *
+ * Copyright 2015 Hemant Negi
+ * Email : hemant.frnz@gmail.com
+ * Compressor http://refresh-sf.com/
+ */
+
+/*! Select2 4.0.6-rc.1 | https://github.com/select2/select2/blob/master/LICENSE.md */

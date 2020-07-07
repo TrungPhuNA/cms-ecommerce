@@ -25,8 +25,8 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('cms_get.menu.index') }}">Menu</a></li>
-                    <li><a class="slide-item" href="">Tags</a></li>
-                    <li><a class="slide-item" href="">Article</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.tag.index') }}">Tags</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.article.index') }}">Article</a></li>
                 </ul>
             </li>
             <li class="slide">
