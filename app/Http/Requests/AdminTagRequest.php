@@ -24,7 +24,17 @@ class AdminTagRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            't_name'        => 'required|unique:tags,t_name,' . $this->id,
+            't_description' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            't_name.required'        => 'Dữ liệu không được để trống',
+            't_name.unique'          => 'Dữ liệu đã tồn tại',
+            't_description.required' => 'Dữ liệu không được để trống',
         ];
     }
 }

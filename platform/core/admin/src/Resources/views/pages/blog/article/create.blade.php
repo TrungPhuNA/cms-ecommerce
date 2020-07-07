@@ -1,5 +1,5 @@
 @extends('admin::layouts.app_cms_admin')
-@section('title_page','Thêm mới menu')
+@section('title_page','Thêm mới bài viết')
 @section('content')
     <div class="container-fluid">
         <!-- breadcrumb -->
@@ -12,10 +12,10 @@
             </div>
             <div class="d-flex my-xl-auto right-content">
                 <div class="pr-1 mb-3 mb-xl-0">
-                    <a href="{{ route('cms_get.menu.index') }}" title="Trở về" class="btn btn-danger mr-2"><i class="la la-undo"></i> Trở về</a>
+                    <a href="{{ route('cms_get.article.index') }}" title="Trở về" class="btn btn-danger mr-2"><i class="la la-undo"></i> Trở về</a>
                 </div>
             </div>
         </div>
-        @include('admin::pages.blog.menu.form')
+        @include('admin::pages.blog.article.form')
     </div>
 @stop

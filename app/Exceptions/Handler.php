@@ -52,9 +52,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if (\Request::is('cms-admin/*')) {
-            return \Response::view('admin::pages.errors.404',array(),500);
+        if ($exception instanceof
+            \Symfony\Component\HttpKernel\Exception\NotFoundHttpException){
+            if (\Request::is('cms-admin/*')) {
+                return \Response::view('admin::pages.errors.404',array(),500);
+            }
         }
+
+
         return parent::render($request, $exception);
     }
 }

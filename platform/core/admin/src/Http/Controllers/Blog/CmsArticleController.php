@@ -1,9 +1,8 @@
 <?php
 
-
 namespace Core\Admin\Http\Controllers\Blog;
 
-
+use App\Service\Menus\MenusService;
 use Core\Admin\Http\Controllers\CmsAdminController;
 
 class CmsArticleController extends CmsAdminController
@@ -15,6 +14,7 @@ class CmsArticleController extends CmsAdminController
 
     public function create()
     {
-        return view('admin::pages.blog.article.index');
+        MenusService::getInstance()->recursive(0, 1, $menus);
+        return view('admin::pages.blog.article.create', compact('menus'));
     }
 }

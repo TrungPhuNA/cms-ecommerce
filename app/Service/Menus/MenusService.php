@@ -9,6 +9,7 @@ use App\Models\Blog\Menu;
 class MenusService
 {
     public static $instance = null;
+    public $menus = null;
     public static function getInstance()
     {
         if (self::$instance === null) {
@@ -25,15 +26,18 @@ class MenusService
 
     public function recursive($parents = 0 ,$level = 1 ,&$listMenusSort)
     {
-        $categories = $this->getListMenus();
-        if(count($categories) > 0 )
+        if ($this->menus == null) {
+            $this->menus = $this->getListMenus();
+        }
+
+        if(count($this->menus) > 0 )
         {
-            foreach ($categories as $key => $value) {
+            foreach ($this->menus as $key => $value) {
                 if($value->mn_parent_id  == $parents)
                 {
                     $value->level = $level;
                     $listMenusSort[] = $value;
-                    unset($categories[$key]);
+                    unset($this->menus[$key]);
                     $parent = $value->id;
 
                     $this->recursive( $parent ,$level + 1 , $listMenusSort);

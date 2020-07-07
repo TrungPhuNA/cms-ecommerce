@@ -54,7 +54,7 @@ class CmsMenuController extends CmsAdminController
     public function update(AdminMenuRequest $request, $id)
     {
         $data               = $request->except('_token');
-        $data['created_at'] = Carbon::now();
+        $data['updated_at'] = Carbon::now();
         Menu::findOrFail($id)->update($data);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');
         return redirect()->back();
