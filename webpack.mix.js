@@ -1,4 +1,6 @@
-const mix = require('laravel-mix');
+// const mix = require('laravel-mix');
+let mix = require(__dirname + '/node_modules/laravel-mix/src/index');
+let webpack = require('webpack');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,6 +17,34 @@ const mix = require('laravel-mix');
 mix.sass('resources/sass/admin/pages/global.scss','public/admin/css')
 mix.js('resources/js/admin/pages/global.js','public/admin/js').autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
+});
+
+mix.webpackConfig({
+    plugins: [
+        new webpack.ContextReplacementPlugin(/\.\/locale$/, 'empty-module', false, /js$/),
+        new webpack.IgnorePlugin(/^codemirror$/),
+    ],
+    node: {
+        fs: "empty"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.modernizrrc.js$/,
+                use: ['modernizr-loader']
+            },
+            {
+                test: /\.modernizrrc(\.json)?$/,
+                use: ['modernizr-loader', 'json-loader']
+            }
+        ]
+    },
+    resolve: {
+        alias: {
+            "handlebars": "handlebars/dist/handlebars.js",
+            modernizr$: path.resolve(__dirname, "resources/assets/js/.modernizrrc"),
+        }
+    },
 });
 // mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
 

@@ -12,4 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group(['prefix' => 'authentication','namespace' => 'AuthAdmin'], function() {
+    Route::get('login','AdminLoginController@getLoginAdmin')->name('cms_get.login');
+    Route::post('login','AdminLoginController@postLoginAdmin');
+
+    Route::get('logout','AdminLoginController@getLogoutAdmin')->name('cms_get.logout');
+});
+
 Route::get('/','DemoController@index');

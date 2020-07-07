@@ -1,8 +1,12 @@
 /* MaterialDesignIcons.com */
 @font-face {
   font-family: "Material Design Icons";
-  src: url("fonts/materialdesignicons-webfont.eot?v=2.0.46");
-  src: url("fonts/materialdesignicons-webfont.eot?") format("embedded-opentype"), url("fonts/materialdesignicons-webfont.woff2?v=2.0.46") format("woff2"), url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.woff?v=2.0.46") format("woff"), url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.ttf?v=2.0.46") format("truetype"), url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.svg?v=2.0.46") format("svg");
+  /*src: url("fonts/materialdesignicons-webfont.eot??");*/
+  /*src: url("fonts/materialdesignicons-webfont.eot?") format("embedded-opentype"),*/
+  /*url("fonts/materialdesignicons-webfont.woff2?v=2.0.46") format("woff2"),*/
+  /*url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.woff?v=2.0.46") format("woff"),*/
+  /*url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.ttf?v=2.0.46") format("truetype"),*/
+  /*url("https://laravel.spruko.com/valex/leftmenu-light-ltr/assets/plugins/materialdesignicons/fonts/materialdesignicons/materialdesignicons-webfont.svg?v=2.0.46") format("svg");*/
   font-weight: normal;
   font-style: normal;
 }

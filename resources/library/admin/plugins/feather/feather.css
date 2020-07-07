@@ -2,9 +2,9 @@
 
 @font-face {
 	font-family: "feather";
-	src: url("fonts/feather/feather-webfont.eot?t=1501841394106");
+	/*src: url("fonts/feather/feather-webfont.eot?t=1501841394106");*/
 	/* IE9*/
-	src: url("fonts/feather/feather-webfont.eot?t=1501841394106") format("embedded-opentype"), url("fonts/feather/feather-webfont.ttf?t=1501841394106") format("truetype"), url("fonts/feather/feather-webfont.svg?t=1501841394106") format("svg");
+	/*src: url("fonts/feather/feather-webfont.eot?t=1501841394106") format("embedded-opentype"), url("fonts/feather/feather-webfont.ttf?t=1501841394106") format("truetype"), url("fonts/feather/feather-webfont.svg?t=1501841394106") format("svg");*/
 	/* iOS 4.1- */
 }
 .fe {

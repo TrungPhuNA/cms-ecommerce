@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use http\Env\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +52,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if (\Request::is('cms-admin/*')) {
+            return \Response::view('admin::pages.errors.404',array(),500);
+        }
         return parent::render($request, $exception);
     }
 }
