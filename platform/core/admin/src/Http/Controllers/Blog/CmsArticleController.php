@@ -9,6 +9,7 @@ use App\Models\Blog\Menu;
 use App\Service\Menus\MenusService;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use Illuminate\Http\Request;
 
 class CmsArticleController extends CmsAdminController
 {
@@ -60,5 +61,15 @@ class CmsArticleController extends CmsAdminController
         Article::findOrFail($id)->update($data);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');
         return redirect()->back();
+    }
+
+    public function delete(Request $request, $id)
+    {
+        if ($request->ajax()){
+            Article::find($id)->delete();
+            return response()->json([
+                'code' => 200
+            ]);
+        }
     }
 }

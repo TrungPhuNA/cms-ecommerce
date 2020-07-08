@@ -46,7 +46,7 @@
                                 <tbody>
                                     @forelse($articles as $article)
                                     <tr>
-                                        <td scope="row">
+                                        <td scope="row" style="width: 20px;">
                                             <label class="box-checkbox">
                                                 <input type="checkbox" name="listID[]" class="checkbox"
                                                        value="{{ $article->id }}">
