@@ -18,8 +18,8 @@ class CreateMenusTable extends Migration
             $table->string('mn_name')->nullable();
             $table->string('mn_slug')->unique()->index();
             $table->string('mn_description')->nullable();
-            $table->string('mn_title_seo')->nullable();
             $table->integer('mn_parent_id')->default(0)->index();
+            $table->string('mn_title_seo')->nullable();
             $table->string('mn_description_seo')->nullable();
             $table->tinyInteger('mn_status')->index()->default(0);
             $table->timestamps();

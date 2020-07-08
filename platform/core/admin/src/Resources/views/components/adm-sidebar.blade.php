@@ -31,6 +31,15 @@
             </li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="index.html#">
+                    <span class="side-menu__label"><i class="la la-cart-arrow-down"></i> Ecommerce </span><i class="angle la la-angle-down"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li><a class="slide-item" href="{{ route('cms_get.attribute.index') }}">Attribute</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.category.index') }}">Category</a></li>
+                </ul>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="index.html#">
                     <span class="side-menu__label"><i class="la la-sitemap"></i> Admin</span><i class="angle la la-angle-down"></i>
                 </a>
                 <ul class="slide-menu">
