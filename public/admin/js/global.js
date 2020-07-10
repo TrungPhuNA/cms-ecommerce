@@ -14963,6 +14963,40 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/components/attribute.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/components/attribute.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {var Attribute = {
+  init: function init() {
+    this.addHtml();
+  },
+  addHtml: function addHtml() {
+    var _this = this;
+
+    $("body").on("click", ".js-add-attribute", function (event) {
+      event.preventDefault();
+      var count = $("#listAttribute tr").length;
+
+      var html = _this.renderHtml(count + 1);
+
+      $("#listAttribute").append(html);
+    });
+  },
+  renderHtml: function renderHtml(stt) {
+    return "<tr>\n            <td>".concat(stt, "</td>\n            <td>\n                <input type=\"hidden\" name=\"av_id[]\" value=\"0\">\n                <input type=\"text\" class=\"form-control\" name=\"av_name[]\" placeholder=\"\">\n            </td>\n            <td><input type=\"text\" class=\"form-control\" name=\"av_slug[]\" placeholder=\"\"></td>\n            <td>\n                <input type=\"color\"  name=\"av_color[]\" value=\"#ff0000\">\n            </td>\n            <td>\n                <img src=\"/images/default.jpg\" alt=\"\" style=\"width: 50px;height: 50px;\">\n            </td>\n            <td>\n                <a href=\"\" class=\"btn btn-sm btn-danger js-confirm-delete\"><i class=\"la la-trash\"></i></a>\n            </td>\n        </tr>");
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (Attribute);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./resources/js/admin/components/check.js":
 /*!************************************************!*\
   !*** ./resources/js/admin/components/check.js ***!
@@ -15321,6 +15355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_run_messages__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/run_messages */ "./resources/js/admin/components/run_messages.js");
 /* harmony import */ var _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/confirm_delete */ "./resources/js/admin/components/confirm_delete.js");
 /* harmony import */ var _components_check__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/check */ "./resources/js/admin/components/check.js");
+/* harmony import */ var _components_attribute__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/attribute */ "./resources/js/admin/components/attribute.js");
  // import './../../../library/admin/plugins/jquery/jquery.min.js'
 
  // import './../../../library/admin/plugins/ionicons/ionicons.js'
@@ -15362,12 +15397,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 $(function () {
   _components_count_char__WEBPACK_IMPORTED_MODULE_26__["default"].init();
   _components_seo__WEBPACK_IMPORTED_MODULE_27__["default"].init();
   _components_check__WEBPACK_IMPORTED_MODULE_30__["default"].init();
   _components_run_messages__WEBPACK_IMPORTED_MODULE_28__["default"].init();
   _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__["default"].init();
+  _components_attribute__WEBPACK_IMPORTED_MODULE_31__["default"].init();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

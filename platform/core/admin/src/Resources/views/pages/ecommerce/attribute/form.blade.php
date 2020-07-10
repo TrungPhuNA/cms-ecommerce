@@ -23,9 +23,61 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-content-label mg-b-5">
-                        SEO
-                        <a href="" class="edit-seo js-edit-seo">Edit SEO</a>
+                        Giá trị
                     </div>
+                    <div class="table-responsive">
+                        <table class="table mg-b-0 text-md-nowrap">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th>Color</th>
+                                <th>Image</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="listAttribute">
+                                @foreach($attributeValue as $key => $item)
+                                    <tr>
+                                        <td>{{ ($key + 1) }}</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="av_name[]" value="{{ $item->av_name }}" placeholder="">
+                                            <input type="hidden" name="av_id[]" value="{{ $item->id }}">
+                                        </td>
+                                        <td><input type="text" class="form-control" name="av_slug[]" value="{{ $item->av_slug }}" placeholder=""></td>
+                                        <td>
+                                            <input type="color"  name="av_color[]" value="{{ $item->av_color }}">
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset('images/default.jpg') }}" alt="" style="width: 50px;height: 50px;">
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <td>{{ count($attributeValue) + 1 }}</td>
+                                    <td>
+                                        <input type="text" class="form-control" name="av_name[]" placeholder="">
+                                        <input type="hidden" name="av_id[]" value="0">
+                                    </td>
+                                    <td><input type="text" class="form-control" name="av_slug[]" placeholder=""></td>
+                                    <td>
+                                        <input type="color"  name="av_color[]" value="#ff0000">
+                                    </td>
+                                    <td>
+                                        <img src="{{ asset('images/default.jpg') }}" alt="" style="width: 50px;height: 50px;">
+                                    </td>
+                                    <td>
+                                        <a href="" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="" class="btn btn-sm btn-info js-add-attribute">Add</a>
                 </div>
             </div>
         </div>

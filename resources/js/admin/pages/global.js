@@ -39,10 +39,12 @@ import Seo from "../components/seo";
 import RunMessages from "../components/run_messages";
 import ConfirmDelete from "../components/confirm_delete";
 import Check from "../components/check";
+import Attribute from "../components/attribute";
 $(function () {
     Charcounter.init()
     Seo.init()
     Check.init()
     RunMessages.init()
     ConfirmDelete.init()
+    Attribute.init()
 })
