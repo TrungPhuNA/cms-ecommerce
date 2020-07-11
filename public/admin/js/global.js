@@ -14975,6 +14975,9 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {var Attribute = {
   init: function init() {
     this.addHtml();
+    this.addListAttributeValue();
+    this.loadAttributeValueSelect();
+    this.addItemBeforeFirst();
   },
   addHtml: function addHtml() {
     var _this = this;
@@ -14987,6 +14990,66 @@ __webpack_require__.r(__webpack_exports__);
 
       $("#listAttribute").append(html);
     });
+  },
+  loadAttributeValueSelect: function loadAttributeValueSelect() {
+    var _this = this;
+
+    $("body").on("change", ".js-changeAttribute", function (event) {
+      event.preventDefault();
+      var $this = $(this);
+      var option = $('option:selected', this).attr('data-json');
+      var $dataJson = $.parseJSON(option);
+
+      var html = _this.renderHtmlValue($dataJson);
+
+      console.log(html);
+      var $valueFirst = $this.parent().next().find(".js-attribute-value");
+      console.log($valueFirst);
+
+      if ($valueFirst.length > 0) {
+        $valueFirst.html('').append(html);
+      }
+    });
+  },
+  addListAttributeValue: function addListAttributeValue() {
+    var _this = this;
+
+    $(".js-add-attribute-value").click(function (event) {
+      event.preventDefault();
+      var $this = $(this);
+      $(this).remove();
+      var $selectAttributeFirst = $(".js-changeAttribute").first();
+
+      if ($selectAttributeFirst.length > 0) {
+        var $optionFirst = $selectAttributeFirst.find("option").first();
+
+        if ($optionFirst.length > 0) {
+          var $dataJson = $.parseJSON($optionFirst.attr("data-json"));
+          var $valueFirst = $(".js-attribute-value").first();
+
+          var html = _this.renderHtmlValue($dataJson);
+
+          $valueFirst.append(html);
+          $(".js-add-attribute-value-btn").removeClass('hide');
+        }
+      }
+
+      $("#listAttributeValue .row").removeClass('hide');
+    });
+  },
+  addItemBeforeFirst: function addItemBeforeFirst() {
+    $(".js-add-attribute-value-btn").click(function (event) {
+      event.preventDefault();
+      var $rowClone = $(".row.clone").clone();
+      $("#listAttributeValue").append($rowClone.removeClass('hide clone')).append($(this));
+    });
+  },
+  renderHtmlValue: function renderHtmlValue($datas) {
+    var html = '';
+    $.each($datas, function (index, value) {
+      html += "<option value=\"".concat(value.id, "\">").concat(value.av_name, "</option>");
+    });
+    return html;
   },
   renderHtml: function renderHtml(stt) {
     return "<tr>\n            <td>".concat(stt, "</td>\n            <td>\n                <input type=\"hidden\" name=\"av_id[]\" value=\"0\">\n                <input type=\"text\" class=\"form-control\" name=\"av_name[]\" placeholder=\"\">\n            </td>\n            <td><input type=\"text\" class=\"form-control\" name=\"av_slug[]\" placeholder=\"\"></td>\n            <td>\n                <input type=\"color\"  name=\"av_color[]\" value=\"#ff0000\">\n            </td>\n            <td>\n                <img src=\"/images/default.jpg\" alt=\"\" style=\"width: 50px;height: 50px;\">\n            </td>\n            <td>\n                <a href=\"\" class=\"btn btn-sm btn-danger js-confirm-delete\"><i class=\"la la-trash\"></i></a>\n            </td>\n        </tr>");

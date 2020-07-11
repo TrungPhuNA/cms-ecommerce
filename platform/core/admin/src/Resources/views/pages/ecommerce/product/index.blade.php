@@ -44,29 +44,29 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                    @forelse($articles as $article)--}}
-{{--                                    <tr>--}}
-{{--                                        <td scope="row" style="width: 20px;">--}}
-{{--                                            <label class="box-checkbox">--}}
-{{--                                                <input type="checkbox" name="listID[]" class="checkbox"--}}
-{{--                                                       value="{{ $article->id }}">--}}
-{{--                                                <span class="checkmark"></span>--}}
-{{--                                            </label>--}}
-{{--                                        </td>--}}
-{{--                                        <td>--}}
-{{--                                            <img src="{{ asset('images/default.jpg') }}" style="width: 60px;height: 60px;" alt="">--}}
-{{--                                        </td>--}}
-{{--                                        <td>{{ $article->a_name }} </td>--}}
-{{--                                        <td>{{ $article->menu->mn_name ?? "[N\A]" }} </td>--}}
-{{--                                        <td>{{ $article->created_at->format('d-m-Y') }}</td>--}}
-{{--                                        <td><span class="btn btn-sm {{ $article->getStatus($article->a_status)['class'] }}">{{ $article->getStatus($article->a_status)['name'] }}</span></td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{ route('cms_get.article.edit', $article->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>--}}
-{{--                                            <a href="{{ route('cms_get.article.delete', $article->id) }}" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                    @empty--}}
-{{--                                    @endforelse--}}
+                                    @forelse($products as $product)
+                                    <tr>
+                                        <td scope="row" style="width: 20px;">
+                                            <label class="box-checkbox">
+                                                <input type="checkbox" name="listID[]" class="checkbox"
+                                                       value="{{ $product->id }}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset('images/default.jpg') }}" style="width: 60px;height: 60px;" alt="">
+                                        </td>
+                                        <td>{{ $product->pro_name }} </td>
+                                        <td>{{ $product->category->c_name ?? "[N\A]" }} </td>
+                                        <td>{{ $product->created_at->format('d-m-Y') }}</td>
+                                        <td><span class="btn btn-sm {{ $product->getStatus($product->a_status)['class'] }}">{{ $product->getStatus($product->a_status)['name'] }}</span></td>
+                                        <td>
+                                            <a href="{{ route('cms_get.product.edit', $product->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>
+                                            <a href="{{ route('cms_get.product.delete', $product->id) }}" class="btn btn-sm btn-danger js-confirm-delete"><i class="la la-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

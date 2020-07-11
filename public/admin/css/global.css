@@ -78302,6 +78302,10 @@ button.toast-close-button {
   display: block;
 }
 
+#listAttributeValue .row {
+  margin-bottom: 10px;
+}
+
 .hide {
   display: none;
 }

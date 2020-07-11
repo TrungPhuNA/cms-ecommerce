@@ -12,7 +12,7 @@
             </div>
             <div class="d-flex my-xl-auto right-content">
                 <div class="pr-1 mb-3 mb-xl-0">
-                    <a href="{{ route('cms_get.article.index') }}" title="Trở về" class="btn btn-danger mr-2"><i class="la la-undo"></i> Trở về</a>
+                    <a href="{{ route('cms_get.product.index') }}" title="Trở về" class="btn btn-danger mr-2"><i class="la la-undo"></i> Trở về</a>
                 </div>
             </div>
         </div>

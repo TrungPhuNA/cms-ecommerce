@@ -3,7 +3,6 @@
 namespace Core\Admin\Http\Controllers\Ecommerce;
 
 use App\Http\Requests\AdminCategoryRequest;
-use App\Http\Requests\AdminMenuRequest;
 use App\Models\Ecommerce\Category;
 use App\Service\Category\CategoryService;
 use Carbon\Carbon;
@@ -22,7 +21,7 @@ class CmsCategoryController extends CmsAdminController
     {
         CategoryService::getInstance()->recursive(0, 1, $categories);
         $viewData = [
-            'categories' => $categories  ?? []
+            'categories' => $categories ?? []
         ];
         return view('admin::pages.ecommerce.category.create', $viewData);
     }
@@ -52,7 +51,7 @@ class CmsCategoryController extends CmsAdminController
         return view('admin::pages.ecommerce.category.update', $viewData);
     }
 
-    public function update(AdminMenuRequest $request, $id)
+    public function update(AdminCategoryRequest $request, $id)
     {
         $data               = $request->except('_token');
         $data['updated_at'] = Carbon::now();

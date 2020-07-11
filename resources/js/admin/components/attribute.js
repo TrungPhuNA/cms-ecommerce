@@ -3,6 +3,7 @@ var Attribute = {
         this.addHtml()
         this.addListAttributeValue()
         this.loadAttributeValueSelect()
+        this.addItemBeforeFirst()
     },
 
     addHtml()
@@ -20,18 +21,60 @@ var Attribute = {
 
     loadAttributeValueSelect()
     {
+        let _this = this
         $("body").on("change",".js-changeAttribute", function (event) {
             event.preventDefault();
             let $this = $(this);
-            console.log($this.val())
+            let option = $('option:selected', this).attr('data-json');
+            let $dataJson = $.parseJSON(option)
+            let html = _this.renderHtmlValue($dataJson)
+            console.log(html);
+            let $valueFirst = $this.parent().next().find(".js-attribute-value");
+            console.log($valueFirst)
+            if ($valueFirst.length > 0) {
+                $valueFirst.html('').append(html)
+            }
         })
     },
     addListAttributeValue()
     {
+        let _this = this
         $(".js-add-attribute-value").click( function (event) {
             event.preventDefault()
+            let $this = $(this)
+            $(this).remove()
+            let $selectAttributeFirst = $(".js-changeAttribute").first()
+            if ($selectAttributeFirst.length > 0) {
+                let $optionFirst = $selectAttributeFirst.find("option").first()
+                if ($optionFirst.length > 0) {
+                    let $dataJson = $.parseJSON($optionFirst.attr("data-json"))
+                    let $valueFirst = $(".js-attribute-value").first()
+                    let html = _this.renderHtmlValue($dataJson)
+                    $valueFirst.append(html)
+                    $(".js-add-attribute-value-btn").removeClass('hide')
+                }
+
+            }
             $("#listAttributeValue .row").removeClass('hide')
         })
+    },
+    addItemBeforeFirst(){
+        $(".js-add-attribute-value-btn").click( function (event) {
+            event.preventDefault()
+            let $rowClone = $(".row.clone").clone();
+            $("#listAttributeValue").append($rowClone.removeClass('hide clone')).append($(this))
+
+        })
+    },
+
+    renderHtmlValue($datas)
+    {
+        let html = ''
+        $.each($datas, function( index, value ) {
+            html += `<option value="${value.id}">${value.av_name}</option>`
+        });
+
+        return html
     },
     renderHtml(stt)
     {
