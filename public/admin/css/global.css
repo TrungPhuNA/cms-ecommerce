@@ -78290,6 +78290,18 @@ button.toast-close-button {
   transform: rotate(45deg);
 }
 
+.js-add-attribute-value {
+  float: right;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #006522;
+}
+
+.js-add-attribute-value-btn {
+  margin-top: 10px;
+  display: block;
+}
+
 .hide {
   display: none;
 }

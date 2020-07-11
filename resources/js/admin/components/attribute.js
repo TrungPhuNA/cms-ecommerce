@@ -1,6 +1,8 @@
 var Attribute = {
     init : function() {
         this.addHtml()
+        this.addListAttributeValue()
+        this.loadAttributeValueSelect()
     },
 
     addHtml()
@@ -16,6 +18,21 @@ var Attribute = {
         })
     },
 
+    loadAttributeValueSelect()
+    {
+        $("body").on("change",".js-changeAttribute", function (event) {
+            event.preventDefault();
+            let $this = $(this);
+            console.log($this.val())
+        })
+    },
+    addListAttributeValue()
+    {
+        $(".js-add-attribute-value").click( function (event) {
+            event.preventDefault()
+            $("#listAttributeValue .row").removeClass('hide')
+        })
+    },
     renderHtml(stt)
     {
         return `<tr>

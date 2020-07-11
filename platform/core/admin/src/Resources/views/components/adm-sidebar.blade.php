@@ -36,6 +36,7 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('cms_get.attribute.index') }}">Attribute</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.category.index') }}">Category</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.product.index') }}">Product</a></li>
                 </ul>
             </li>
             <li class="slide">
