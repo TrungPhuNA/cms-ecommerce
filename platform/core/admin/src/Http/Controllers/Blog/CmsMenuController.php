@@ -23,6 +23,7 @@ class CmsMenuController extends CmsAdminController
     public function create()
     {
          MenusService::getInstance()->recursive(0, 1, $menus);
+         $menus = $menus ?? [];
         return view('admin::pages.blog.menu.create', compact('menus'));
     }
 
@@ -45,7 +46,7 @@ class CmsMenuController extends CmsAdminController
         MenusService::getInstance()->recursive(0, 1, $menus);
         $viewData = [
             'menu'  => $menu,
-            'menus' => $menus
+            'menus' => $menus ?? []
         ];
 
         return view('admin::pages.blog.menu.update', $viewData);

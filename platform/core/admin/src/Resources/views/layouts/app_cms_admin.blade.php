@@ -23,7 +23,7 @@
             var MESSAGE = "{{session('toastr.message')}}";
         </script>
     @endif
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('admin/css/global.css') }}" rel="stylesheet">
 </head>
 <body class="main-body app sidebar-mini">

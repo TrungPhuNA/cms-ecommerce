@@ -51,7 +51,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($menus as $menu)
+                                    @forelse($menus ?? [] as $menu)
                                     <tr>
                                         <td scope="row">
                                             <label class="box-checkbox">
