@@ -15291,6 +15291,40 @@ var alertSw2 = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.a.mixin({
 
 /***/ }),
 
+/***/ "./resources/js/admin/components/scrollTop.js":
+/*!****************************************************!*\
+  !*** ./resources/js/admin/components/scrollTop.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {var ScrollTop = {
+  init: function init() {
+    this.positionStatic();
+  },
+  positionStatic: function positionStatic() {
+    var $element = $(".js-position-static");
+
+    if ($element.length > 0) {
+      $(window).scroll(function () {
+        var scroll = $(this).scrollTop();
+
+        if (scroll >= 102) {
+          if (!$element.hasClass('position-static-save')) $element.addClass('position-static-save');
+        } else {
+          if ($element.hasClass('position-static-save')) $element.removeClass('position-static-save');
+        }
+      });
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (ScrollTop);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./resources/js/admin/components/seo.js":
 /*!**********************************************!*\
   !*** ./resources/js/admin/components/seo.js ***!
@@ -15419,6 +15453,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/confirm_delete */ "./resources/js/admin/components/confirm_delete.js");
 /* harmony import */ var _components_check__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/check */ "./resources/js/admin/components/check.js");
 /* harmony import */ var _components_attribute__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/attribute */ "./resources/js/admin/components/attribute.js");
+/* harmony import */ var _components_scrollTop__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../components/scrollTop */ "./resources/js/admin/components/scrollTop.js");
  // import './../../../library/admin/plugins/jquery/jquery.min.js'
 
  // import './../../../library/admin/plugins/ionicons/ionicons.js'
@@ -15461,6 +15496,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 $(function () {
   _components_count_char__WEBPACK_IMPORTED_MODULE_26__["default"].init();
   _components_seo__WEBPACK_IMPORTED_MODULE_27__["default"].init();
@@ -15468,6 +15504,7 @@ $(function () {
   _components_run_messages__WEBPACK_IMPORTED_MODULE_28__["default"].init();
   _components_confirm_delete__WEBPACK_IMPORTED_MODULE_29__["default"].init();
   _components_attribute__WEBPACK_IMPORTED_MODULE_31__["default"].init();
+  _components_scrollTop__WEBPACK_IMPORTED_MODULE_32__["default"].init();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

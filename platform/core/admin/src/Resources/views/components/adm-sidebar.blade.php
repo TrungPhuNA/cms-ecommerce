@@ -13,7 +13,6 @@
                 </div>
                 <div class="user-info">
                     <h4 class="font-weight-semibold mt-3 mb-0">{{ get_data_user('admins','name') }}</h4>
-{{--                    <span class="mb-0 text-muted">Premium Member</span>--}}
                 </div>
             </div>
         </div>
@@ -47,6 +46,14 @@
                     <li><a class="slide-item" href="{{ route('cms_get.permission.list') }}">Permission</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.role.list') }}">Role</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.admin.list') }}">Admin</a></li>
+                </ul>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="index.html#">
+                    <span class="side-menu__label"><i class="la la-cog"></i> System</span><i class="angle la la-angle-down"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li><a class="slide-item" href="{{ route('cms_get.information.index') }}">Information</a></li>
                 </ul>
             </li>
         </ul>

@@ -37,6 +37,32 @@ Route::group(['prefix' => 'blog', 'namespace' => 'Blog'], function (){
         Route::get('delete/{id}','CmsArticleController@delete')->name('cms_get.article.delete');
     });
 });
+Route::group(['prefix' => 'system', 'namespace' => 'System'], function (){
+    Route::group(['prefix' => 'information'], function(){
+        Route::get('','CmsInformationController@index')->name('cms_get.information.index');
+    });
+
+    Route::group(['prefix' => 'tag'], function(){
+        Route::get('','CmsTagController@index')->name('cms_get.tag.index');
+        Route::get('create','CmsTagController@create')->name('cms_get.tag.create');
+        Route::post('create','CmsTagController@store');
+
+        Route::get('update/{id}','CmsTagController@edit')->name('cms_get.tag.edit');
+        Route::post('update/{id}','CmsTagController@update');
+
+        Route::get('delete/{id}','CmsTagController@delete')->name('cms_get.tag.delete');
+    });
+    Route::group(['prefix' => 'article'], function(){
+        Route::get('','CmsArticleController@index')->name('cms_get.article.index');
+        Route::get('create','CmsArticleController@create')->name('cms_get.article.create');
+        Route::post('create','CmsArticleController@store');
+
+        Route::get('update/{id}','CmsArticleController@edit')->name('cms_get.article.edit');
+        Route::post('update/{id}','CmsArticleController@update');
+
+        Route::get('delete/{id}','CmsArticleController@delete')->name('cms_get.article.delete');
+    });
+});
 Route::group(['prefix' => 'ecommerce', 'namespace' => 'Ecommerce'], function (){
     Route::group(['prefix' => 'category'], function(){
         Route::get('','CmsCategoryController@index')->name('cms_get.category.index');

@@ -21,6 +21,11 @@
 @import "../components/checkbox";
 @import "../components/product";
 //assets/css/icons.css
+.position-static-save {
+    position: fixed;
+    top: 90px;
+    width: 100%;
+}
 .hide {
     display: none;
 }

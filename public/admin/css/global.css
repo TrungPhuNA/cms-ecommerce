@@ -79360,6 +79360,12 @@ slide is-expanded side-menu__item {
   margin-bottom: 10px;
 }
 
+.position-static-save {
+  position: fixed;
+  top: 90px;
+  width: 100%;
+}
+
 .hide {
   display: none;
 }

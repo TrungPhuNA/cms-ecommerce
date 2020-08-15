@@ -137,7 +137,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-12">
-            <div class="card">
+            <div class="card js-position-static">
                 <div class="card-body">
                     <div>
                         <h6 class="card-title mb-1">Publish</h6>

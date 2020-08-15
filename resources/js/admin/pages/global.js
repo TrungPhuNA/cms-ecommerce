@@ -40,6 +40,7 @@ import RunMessages from "../components/run_messages";
 import ConfirmDelete from "../components/confirm_delete";
 import Check from "../components/check";
 import Attribute from "../components/attribute";
+import ScrollTop from "../components/scrollTop";
 $(function () {
     Charcounter.init()
     Seo.init()
@@ -47,4 +48,5 @@ $(function () {
     RunMessages.init()
     ConfirmDelete.init()
     Attribute.init()
+    ScrollTop.init()
 })
