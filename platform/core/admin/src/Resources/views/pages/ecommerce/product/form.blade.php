@@ -24,7 +24,7 @@
                         <div class="SumoSelect sumo_somename" tabindex="0" role="button" aria-expanded="true">
                             <select name="pro_category_id" class="form-control SlectBox SumoUnder" tabindex="-1">
                                 <option title="ROOT" value="">__Chọn danh mục__</option>
-                                @foreach($categories as $item)
+                                @foreach($categories ?? [] as $item)
                                     <option title="{{ $item->c_name }}"
                                             value="{{ $item->id }} " {{ (old('pro_category_id',$product->pro_category_id ?? 0)) == $item->id ? "selected='selected'" : "" }}>
                                         <?php $str = '';for ($i = 0; $i < $item->level; $i++) {

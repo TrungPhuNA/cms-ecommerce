@@ -51,14 +51,14 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input class="form-control" placeholder="Enter your email" name="email" type="text">
+                                                <input class="form-control" placeholder="Enter your email" value="duan@gmail.com" name="email" type="text">
                                                 @if ($errors->first('email'))
                                                     <span class="text-danger">{{ $errors->first('email') }}</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input class="form-control" placeholder="Enter your password" name="password" type="password">
+                                                <input class="form-control" placeholder="Enter your password" name="password" value="0986420994" type="password">
                                                 @if ($errors->first('password'))
                                                     <span class="text-danger">{{ $errors->first('password') }}</span>
                                                 @endif
