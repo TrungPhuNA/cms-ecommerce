@@ -5,6 +5,4 @@
     2. Tạo fake tài khoản admin
     3. composer install && npm install && npm run prod
     4. php artisan serve 
-    
-
 ## ECOMMERCE

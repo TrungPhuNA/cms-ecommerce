@@ -15,6 +15,7 @@ let webpack = require('webpack');
 
 
 mix.sass('resources/sass/admin/pages/global.scss','public/admin/css')
+mix.js('resources/js/admin/pages/profile.js','public/admin/js')
 mix.js('resources/js/admin/pages/global.js','public/admin/js').autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
 });

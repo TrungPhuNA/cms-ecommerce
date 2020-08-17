@@ -17,10 +17,12 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->string('password');
             $table->string('phone')->unique();
             $table->char('slug',50)->index()->nullable();
             $table->string("address")->nullable();
+            $table->text('about')->nullable();
             $table->string('avatar')->nullable();
             $table->tinyInteger('status')->default(1)->index();
             $table->text('log_login')->nullable();

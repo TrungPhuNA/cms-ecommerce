@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -52729,26 +52729,14 @@ jQuery('.demo_changer .demo-icon').click(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/admin/pages/global.scss":
-/*!************************************************!*\
-  !*** ./resources/sass/admin/pages/global.scss ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*******************************************************************************************!*\
-  !*** multi ./resources/js/admin/pages/global.js ./resources/sass/admin/pages/global.scss ***!
-  \*******************************************************************************************/
+/***/ 1:
+/*!**************************************************!*\
+  !*** multi ./resources/js/admin/pages/global.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mac/Documents/web/work/duan/cms-ecommerce/resources/js/admin/pages/global.js */"./resources/js/admin/pages/global.js");
-module.exports = __webpack_require__(/*! /Users/mac/Documents/web/work/duan/cms-ecommerce/resources/sass/admin/pages/global.scss */"./resources/sass/admin/pages/global.scss");
+module.exports = __webpack_require__(/*! /Users/mac/Documents/web/work/duan/cms-ecommerce/resources/js/admin/pages/global.js */"./resources/js/admin/pages/global.js");
 
 
 /***/ })

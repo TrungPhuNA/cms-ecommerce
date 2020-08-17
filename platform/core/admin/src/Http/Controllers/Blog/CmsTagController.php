@@ -6,9 +6,11 @@ namespace Core\Admin\Http\Controllers\Blog;
 
 use App\Http\Requests\AdminTagRequest;
 use App\Models\Blog\Menu;
+use App\Models\Blog\SeoBlog;
 use App\Models\Blog\Tag;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use Core\Admin\Services\RenderUrlSeoBlogServices;
 use Illuminate\Http\Request;
 
 class CmsTagController extends CmsAdminController
@@ -34,6 +36,7 @@ class CmsTagController extends CmsAdminController
         $id                 = Tag::insertGetId($data);
         if ($id) {
             $this->showSuccessMessages();
+            RenderUrlSeoBlogServices::renderUrlBLog($request->t_slug, SeoBlog::TYPE_TAG, $id);
             return redirect()->back();
         }
         $this->showErrorMessages();
@@ -51,6 +54,7 @@ class CmsTagController extends CmsAdminController
         $data               = $request->except('_token');
         $data['updated_at'] = Carbon::now();
         Tag::findOrFail($id)->update($data);
+        RenderUrlSeoBlogServices::renderUrlBLog($request->t_slug, SeoBlog::TYPE_TAG, $id);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');
         return redirect()->back();
     }
@@ -58,7 +62,15 @@ class CmsTagController extends CmsAdminController
     public function delete(Request $request, $id)
     {
         if ($request->ajax()){
-            Tag::find($id)->delete();
+            $tag = Tag::find($id);
+
+            if ($tag) {
+                SeoBlog::where([
+                    'sb_md5'  => md5($tag->t_slug),
+                    'sb_type' => SeoBlog::TYPE_TAG
+                ])->delete();
+            }
+
             return response()->json([
                 'code' => 200
             ]);
