@@ -6,9 +6,11 @@ use App\Http\Requests\AdminArticleRequest;
 use App\Http\Requests\AdminMenuRequest;
 use App\Models\Blog\Article;
 use App\Models\Blog\Menu;
+use App\Models\Blog\SeoBlog;
 use App\Service\Menus\MenusService;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use Core\Admin\Services\RenderUrlSeoBlogServices;
 use Illuminate\Http\Request;
 
 class CmsArticleController extends CmsAdminController
@@ -37,6 +39,7 @@ class CmsArticleController extends CmsAdminController
         $data['created_at'] = Carbon::now();
         $id                 = Article::insertGetId($data);
         if ($id) {
+            RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);
             $this->showSuccessMessages();
             return redirect()->back();
         }
@@ -60,6 +63,7 @@ class CmsArticleController extends CmsAdminController
         $data               = $request->except('_token');
         $data['updated_at'] = Carbon::now();
         Article::findOrFail($id)->update($data);
+        RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');
         return redirect()->back();
     }
@@ -67,7 +71,14 @@ class CmsArticleController extends CmsAdminController
     public function delete(Request $request, $id)
     {
         if ($request->ajax()){
-            Article::find($id)->delete();
+            $article = Article::find($id);
+            if ($article) {
+                SeoBlog::where([
+                    'sb_md5'  => md5($article->a_slug),
+                    'sb_type' => SeoBlog::TYPE_ARTICLE
+                ])->delete();
+                $article->delete();
+            }
             return response()->json([
                 'code' => 200
             ]);

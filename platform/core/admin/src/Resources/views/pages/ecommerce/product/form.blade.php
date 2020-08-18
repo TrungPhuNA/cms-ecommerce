@@ -162,6 +162,16 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label  class="required">Avatar</label>
+                        <div class="SumoSelect sumo_somename" tabindex="0" role="button" aria-expanded="true">
+{{--                            <input type="file" class="my-pond" name="filepond"/>--}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>

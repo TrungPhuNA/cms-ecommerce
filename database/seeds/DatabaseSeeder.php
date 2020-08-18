@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(DatabaseSeederProduct::class);
+        // $this->call(UserSeeder::class);
+    }
+
+    protected function seederAdmin()
+    {
         \DB::table('admins')->insert([
             'name'     => 'Admin',
             'email'    => 'duan@gmail.com',
@@ -19,6 +25,5 @@ class DatabaseSeeder extends Seeder
             'about'    => 'Xin chào Phan Trung Phú',
             'password' => \Hash::make('0986420994')
         ]);
-        // $this->call(UserSeeder::class);
     }
 }

@@ -2,19 +2,22 @@
 
 namespace Core\Admin\Http\Controllers\Ecommerce;
 
+use App\Models\Blog\SeoBlog;
 use App\Models\Ecommerce\Attribute;
 use App\Models\Ecommerce\AttributeValue;
 use App\Models\Ecommerce\Product;
+use App\Models\Ecommerce\SeoEcommerce;
 use App\Service\Category\CategoryService;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use Core\Admin\Services\RenderUrlSeoEcommerceServices;
 use Illuminate\Http\Request;
 
 class CmsProductController extends CmsAdminController
 {
     public function index()
     {
-        $products = Product::paginate(20);
+        $products = Product::paginate(10);
         $viewData = [
             'products' => $products
         ];
@@ -46,6 +49,7 @@ class CmsProductController extends CmsAdminController
         $id                 = Product::insertGetId($data);
         if ($id) {
             $this->syncAttributeValue($id, $request);
+            RenderUrlSeoEcommerceServices::renderUrlEcommerce($request->pro_slug, SeoEcommerce::TYPE_PRODUCT, $id);
         }
         $this->showSuccessMessages();
         return redirect()->back();
@@ -100,6 +104,7 @@ class CmsProductController extends CmsAdminController
         $data               = $request->except('_token', 'pav_attribute_id', 'pav_value_id');
         $data['updated_at'] = Carbon::now();
         Product::findOrFail($id)->update($data);
+        RenderUrlSeoEcommerceServices::renderUrlEcommerce($request->pro_slug, SeoEcommerce::TYPE_PRODUCT, $id);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');
         return redirect()->back();
     }
@@ -111,6 +116,10 @@ class CmsProductController extends CmsAdminController
             if ($product) {
                 \DB::table('product_attribute_value')->where('pav_product_id', $id)->delete();
                 $product->delete();
+                SeoEcommerce::where([
+                    'se_md5'  => md5($product->pro_slug),
+                    'se_type' => SeoEcommerce::TYPE_PRODUCT
+                ])->delete();
 
                 return response()->json([
                     'code' => 200
