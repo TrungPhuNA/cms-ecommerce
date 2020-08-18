@@ -21,7 +21,9 @@ class MenusService
 
     public function getListMenus()
     {
-        return Menu::with('parent:id,mn_name')->get();
+        return Menu::with('parent:id,mn_name')
+            ->orderBy('mn_sort','asc')
+            ->get();
     }
 
     public function recursive($parents = 0 ,$level = 1 ,&$listMenusSort)

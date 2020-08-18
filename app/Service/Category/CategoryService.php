@@ -20,7 +20,9 @@ class CategoryService
 
     public function getListCategories()
     {
-        return Category::with('parent:id,c_name')->get();
+        return Category::with('parent:id,c_name')
+            ->orderBy('c_sort','asc')
+            ->get();
     }
 
     public function recursive($parents = 0 ,$level = 1 ,&$listCategoriesSort)

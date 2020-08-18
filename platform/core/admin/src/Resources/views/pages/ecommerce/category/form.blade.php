@@ -48,6 +48,12 @@
                                   data-max="300" class="form-control keypress-count" cols="10"
                                   rows="3">{{ old('c_description', $category->c_description ?? '') }}</textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label  class="required">Sort </label>
+                        <input type="number" name="c_sort" class="form-control" placeholder="1" value="{{ old('c_sort',$category->c_sort ?? 1) }}">
+                        <p class="text-warning"><i>Số thứ tự được sắp xếp từ nhỏ đến lớn</i></p>
+                    </div>
                 </div>
             </div>
             <div class="card">

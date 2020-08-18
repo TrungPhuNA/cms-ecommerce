@@ -18,6 +18,11 @@
                         <label  class="required">Slug </label>
                         <input type="text" name="mn_slug" class="form-control slug" placeholder="Slug ..." value="{{ old('mn_slug',$menu->mn_slug ?? '') }}">
                     </div>
+                    <div class="form-group">
+                        <label  class="required">Sort </label>
+                        <input type="number" name="mn_sort" class="form-control" placeholder="1" value="{{ old('mn_sort',$menu->mn_sort ?? 1) }}">
+                        <p class="text-warning"><i>Số thứ tự được sắp xếp từ nhỏ đến lớn</i></p>
+                    </div>
 
                     <div class="form-group">
                         <label  class="required">Parent </label>

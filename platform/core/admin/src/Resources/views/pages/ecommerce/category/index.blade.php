@@ -46,6 +46,7 @@
                                     <th>Name</th>
                                     <th>Parent</th>
                                     <th>Seo</th>
+                                    <th class="text-center">Stt</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -78,6 +79,7 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        <td class="text-center">{{ $category->c_sort }}</td>
                                         <td><span class="btn btn-sm {{ $category->getStatus($category->c_status)['class'] }}">{{ $category->getStatus($category->c_status)['name'] }}</span></td>
                                         <td>
                                             <a href="{{ route('cms_get.category.edit', $category->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>

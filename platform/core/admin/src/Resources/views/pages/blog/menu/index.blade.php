@@ -46,6 +46,7 @@
                                     <th>Name</th>
                                     <th>Parent</th>
                                     <th>Seo</th>
+                                    <th class="text-center">Stt</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -78,6 +79,7 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        <td class="text-center">{{ $menu->mn_sort }}</td>
                                         <td><span class="btn btn-sm {{ $menu->getStatus($menu->mn_status)['class'] }}">{{ $menu->getStatus($menu->mn_status)['name'] }}</span></td>
                                         <td>
                                             <a href="{{ route('cms_get.menu.edit', $menu->id) }}" class="btn btn-sm btn-info"><i class="la la-pen"></i></a>

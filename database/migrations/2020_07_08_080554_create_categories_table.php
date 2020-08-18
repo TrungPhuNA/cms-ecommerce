@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->string('c_banner')->nullable();
             $table->string('c_description')->nullable();
             $table->tinyInteger('c_hot')->default(0);
+            $table->tinyInteger('c_sort')->default(1)->index();
             $table->tinyInteger('c_status')->default(1);
             $table->integer('c_parent_id')->default(0)->index();
             $table->integer('c_count_product')->default(0);
