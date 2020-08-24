@@ -36,7 +36,7 @@
                 @endfor
             </div>
         </div>
-        <div class="box-30">
+        <div class="box-30 box-right-banner">
             <div class="top">
                 <img src="{{ asset('images/cio_digital_transformation_resource.jpg') }}" alt="">
                 <div class="title">Theo dòng sự kiện</div>

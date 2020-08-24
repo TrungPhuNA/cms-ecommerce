@@ -23,6 +23,10 @@ class HubBlogController extends BaseBlogController
             case SeoBlog::TYPE_ARTICLE:
                 return (new BlogArticleController())->index($request, $idAction);
                 break;
+
+            case SeoBlog::TYPE_MENU:
+                return (new BlogMenuController())->index($request, $idAction);
+                break;
         }
     }
 
