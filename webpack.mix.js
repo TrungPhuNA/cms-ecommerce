@@ -28,12 +28,20 @@ let build_js = [
         from: 'resources/js/frontend/pages/home/index.js',
         to: 'js/home.js'
     },
+    {
+        from: 'resources/js/frontend/pages/menu/index.js',
+        to: 'js/menu.js'
+    },
 ];
 
 let build_scss = [
     {
         from: 'resources/sass/frontend/pages/home/index.scss',
         to: 'css/home.css'
+    },
+    {
+        from: 'resources/sass/frontend/pages/menu/index.scss',
+        to: 'css/menu.css'
     },
 ];
 

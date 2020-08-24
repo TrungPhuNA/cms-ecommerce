@@ -1,8 +1,11 @@
 {
     "/admin/js/global.js": "/admin/js/global.js?id=9bd303424de8919f23a1",
-    "/admin/js/profile.js": "/admin/js/profile.js?id=5522c7af104f6ca1ec68",
+    "/admin/js/profile.js": "/admin/js/profile.js?id=c67e389851a63997044a",
     "/admin/css/global.css": "/admin/css/global.css?id=7983971e42a2d1b96c92",
-    "/css/home.css": "/css/home.css?id=01062347901833ac8225",
-    "/js/home.js": "/js/home.js?id=633f54acff6d67dfe17c",
-    "/css/home.min.css": "/css/home.min.css?id=01062347901833ac8225"
+    "/css/home.css": "/css/home.css?id=98438435806795c004ca",
+    "/css/menu.css": "/css/menu.css?id=d41d8cd98f00b204e980",
+    "/js/home.js": "/js/home.js?id=386f846896c6b25faf19",
+    "/js/menu.js": "/js/menu.js?id=aaea120370299b69cd6b",
+    "/css/home.min.css": "/css/home.min.css?id=98438435806795c004ca",
+    "/css/menu.min.css": "/css/menu.min.css?id=d41d8cd98f00b204e980"
 }

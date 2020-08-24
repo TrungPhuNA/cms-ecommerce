@@ -10,6 +10,7 @@ var Home = {
             autoplay: true,
             autoplayTimeout: 3000,
             loop: true,
+            nav:true,
             pagination: false,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3],
