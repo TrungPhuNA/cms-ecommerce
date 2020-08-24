@@ -20,4 +20,4 @@ Route::group(['prefix' => 'authentication','namespace' => 'AuthAdmin'], function
     Route::get('logout','AdminLoginController@getLogoutAdmin')->name('cms_get.logout');
 });
 
-Route::get('/','DemoController@index');
+Route::get('/','HomeController@index')->name('get.home');

@@ -2,6 +2,9 @@
 let mix = require(__dirname + '/node_modules/laravel-mix/src/index');
 let webpack = require('webpack');
 
+let directory_asset = 'public';
+mix.setPublicPath(path.normalize(directory_asset));
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,6 +21,28 @@ mix.sass('resources/sass/admin/pages/global.scss','public/admin/css')
 mix.js('resources/js/admin/pages/profile.js','public/admin/js')
 mix.js('resources/js/admin/pages/global.js','public/admin/js').autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
+});
+
+let build_js = [
+    {
+        from: 'resources/js/frontend/pages/home/index.js',
+        to: 'js/home.js'
+    },
+];
+
+let build_scss = [
+    {
+        from: 'resources/sass/frontend/pages/home/index.scss',
+        to: 'css/home.css'
+    },
+];
+
+build_js.map((file) => {
+    mix.js(file.from, file.to);
+});
+
+build_scss.map((file) => {
+    mix.sass(file.from, file.to).minify(directory_asset + '/' + file.to);
 });
 
 mix.webpackConfig({

@@ -16,6 +16,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
     protected $namespaceAdmin = 'Core\Admin\Http\Controllers';
+    protected $namespaceProduct = 'Frontend\Product\Http\Controllers';
+    protected $namespaceBlog = 'Frontend\Blog\Http\Controllers';
 
     /**
      * The path to the "home" route for your application.
@@ -44,6 +46,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->mapAdminRoutes();
+        $this->mapProductRoutes();
+        $this->mapBlogRoutes();
     }
 
     /**
@@ -81,6 +85,22 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware(['web','check_admin_login'])
             ->namespace($this->namespaceAdmin)
             ->group(base_path('platform/core/admin/src/routes.php'));
+    }
+
+    protected function mapProductRoutes()
+    {
+        Route::prefix('san-pham')
+            ->middleware(['web'])
+            ->namespace($this->namespaceProduct)
+            ->group(base_path('platform/frontend/product/src/routes.php'));
+    }
+
+    protected function mapBlogRoutes()
+    {
+        Route::prefix('bai-viet')
+        ->middleware(['web'])
+        ->namespace($this->namespaceBlog)
+        ->group(base_path('platform/frontend/blog/src/routes.php'));
     }
 
 }

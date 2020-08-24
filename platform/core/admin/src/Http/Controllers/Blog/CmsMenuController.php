@@ -17,7 +17,7 @@ class CmsMenuController extends CmsAdminController
     {
         MenusService::getInstance()->recursive(0, 1, $menus);
         $viewData = [
-            'menus' => $menus
+            'menus' => $menus,
         ];
         return view('admin::pages.blog.menu.index', $viewData);
     }
@@ -59,6 +59,7 @@ class CmsMenuController extends CmsAdminController
     {
         $data               = $request->except('_token');
         $data['updated_at'] = Carbon::now();
+
         Menu::findOrFail($id)->update($data);
         RenderUrlSeoBlogServices::renderUrlBLog($request->mn_slug, SeoBlog::TYPE_MENU, $id);
         $this->showSuccessMessages('Cập nhật dữ liệu thành công');

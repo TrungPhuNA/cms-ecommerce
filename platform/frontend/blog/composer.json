@@ -1,0 +1,27 @@
+{
+    "name": "frontend/blog",
+    "description": "Core Blog Frontend",
+    "type": "package",
+    "version": "dev",
+    "autoload": {
+        "psr-4": {
+            "Frontend\\Blog\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrungPhuNA",
+            "email": "phupt.humg.94@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Frontend\\Blog\\BlogServiceProvider"
+            ]
+        }
+    }
+}

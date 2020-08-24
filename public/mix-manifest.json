@@ -1,5 +1,8 @@
 {
-    "/admin/js/global.js": "/admin/js/global.js?id=d33ed2e9be5d2047aa77",
-    "/admin/js/profile.js": "/admin/js/profile.js?id=f9660b38e5c6662e5eac",
-    "/admin/css/global.css": "/admin/css/global.css?id=8a99d6a0b3c58d9cf62c"
+    "/admin/js/global.js": "/admin/js/global.js?id=9bd303424de8919f23a1",
+    "/admin/js/profile.js": "/admin/js/profile.js?id=5522c7af104f6ca1ec68",
+    "/admin/css/global.css": "/admin/css/global.css?id=7983971e42a2d1b96c92",
+    "/css/home.css": "/css/home.css?id=1e1c045343724e760947",
+    "/js/home.js": "/js/home.js?id=633f54acff6d67dfe17c",
+    "/css/home.min.css": "/css/home.min.css?id=1e1c045343724e760947"
 }

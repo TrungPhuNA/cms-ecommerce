@@ -1,4 +1,4 @@
-<form action="" method="POST" >
+<form action="" method="POST" enctype="multipart/form-data" >
     @csrf
     <div class="row">
         <div class="col-lg-8 col-md-12">
@@ -35,6 +35,17 @@
                                 <span class="text-danger">{{ $errors->first('a_menu_id') }}</span>
                             @endif
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="required">Tags </label>
+                        <select name="tags[]" class="form-control js-select2-tags" tabindex="-1" multiple="multiple">
+                            <option title="" value="">__Từ khoá__</option>
+                            @foreach($tags as $item)
+                                <option title="{{ $item->t_name }}" {{ in_array($item->id, $tagsOld) ? "selected='selected'" : ""}} value="{{ $item->id }} ">
+                                    {{ $item->t_name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group {{ $errors->has('a_description') ? 'was-validated' : '' }} ">
                         <label  class="required">Description </label>
@@ -114,6 +125,16 @@
                                 <option value="2" {{ ($menu->a_status ?? '' ) == 2 ? "selected='selected'" : "" }}>Draft</option>
                                 <option value="1" {{ ($menu->a_status ?? '' ) == 1 ? "selected='selected'" : "" }}>Pending</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label  class="required">Avatar</label>
+                        <div class="form-group">
+                            <input type="file" class="my-pond" name="avatar">
                         </div>
                     </div>
                 </div>

@@ -12,4 +12,8 @@ class SeoEcommerce extends Model
     const TYPE_KEYWORD  = 1;
     const TYPE_CATEGORY = 2;
     const TYPE_PRODUCT  = 3;
+
+    const SLUG_KEYWORD = 'k';
+    const SLUG_CATEGORY = 'c';
+    const SLUG_PRODUCT = 'p';
 }

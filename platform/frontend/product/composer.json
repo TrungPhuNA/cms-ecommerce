@@ -1,0 +1,27 @@
+{
+    "name": "frontend/product",
+    "description": "Core Product Frontend",
+    "type": "package",
+    "version": "dev",
+    "autoload": {
+        "psr-4": {
+            "Frontend\\Product\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrungPhuNA",
+            "email": "phupt.humg.94@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Frontend\\Product\\ProductServiceProvider"
+            ]
+        }
+    }
+}

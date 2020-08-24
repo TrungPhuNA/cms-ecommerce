@@ -176,7 +176,7 @@
                 <ul class="nav">
                     <li class="">
                         <div class="dropdown  nav-itemd-none d-md-flex">
-                            <a href="index.html#" class="d-flex  nav-item nav-link pr-0 country-flag1"
+                            <a href="/" class="d-flex  nav-item nav-link pr-0 country-flag1"
                                data-toggle="dropdown" aria-expanded="false">
                                 <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
                                         src="{{ asset('images/admin/') }}/flags/us_flag.jpg" alt="img"></span>

@@ -41,6 +41,8 @@ import ConfirmDelete from "../components/confirm_delete";
 import Check from "../components/check";
 import Attribute from "../components/attribute";
 import ScrollTop from "../components/scrollTop";
+import Tags from "../components/tags";
+import InitFilepond from "../components/init_filepond";
 $(function () {
     Charcounter.init()
     Seo.init()
@@ -49,4 +51,6 @@ $(function () {
     ConfirmDelete.init()
     Attribute.init()
     ScrollTop.init()
+    Tags.init()
+    InitFilepond.init()
 })

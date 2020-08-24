@@ -15,6 +15,18 @@
  */
 
 /*!
+ * FilePond 4.19.2
+ * Licensed under MIT, https://opensource.org/licenses/MIT/
+ * Please visit https://pqina.nl/filepond/ for details.
+ */
+
+/*!
+ * FilePondPluginImagePreview 4.6.4
+ * Licensed under MIT, https://opensource.org/licenses/MIT/
+ * Please visit https://pqina.nl/filepond/ for details.
+ */
+
+/*!
  * JQVMap: jQuery Vector Map Library
  * @author JQVMap <me@peterschmalfeldt.com>
  * @version 1.5.0

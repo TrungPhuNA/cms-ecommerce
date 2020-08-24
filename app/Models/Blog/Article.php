@@ -35,4 +35,9 @@ class Article extends Model
     {
         return Arr::get($this->status, $this->a_status,'[N\A]');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'articles_tags','at_article_id','at_tag_id');
+    }
 }

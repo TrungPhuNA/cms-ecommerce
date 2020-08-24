@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "barryvdh/laravel-debugbar": "^3.3",
         "core/admin": "@dev",
+        "frontend/product": "@dev",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
@@ -53,6 +54,10 @@
         {
             "type": "path",
             "url": "./platform/core/*"
+        },
+        {
+            "type": "path",
+            "url": "./platform/frontend/*"
         }
     ],
     "scripts": {
