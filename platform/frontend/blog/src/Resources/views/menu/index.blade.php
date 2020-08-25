@@ -41,6 +41,7 @@
                         @endfor
                     </div>
                 </div>
+                @include('pages.components._inc_articles')
             </div>
             <div class="box-30 box-right-banner" style="margin-left: 10px;">
                 <div class="top">
