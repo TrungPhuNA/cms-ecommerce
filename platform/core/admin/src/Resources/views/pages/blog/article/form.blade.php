@@ -41,7 +41,7 @@
                         <select name="tags[]" class="form-control js-select2-tags" tabindex="-1" multiple="multiple">
                             <option title="" value="">__Từ khoá__</option>
                             @foreach($tags as $item)
-                                <option title="{{ $item->t_name }}" {{ in_array($item->id, $tagsOld) ? "selected='selected'" : ""}} value="{{ $item->id }} ">
+                                <option title="{{ $item->t_name }}" {{ in_array($item->id, $tagsOld ?? []) ? "selected='selected'" : ""}} value="{{ $item->id }} ">
                                     {{ $item->t_name }}
                                 </option>
                             @endforeach
@@ -63,7 +63,7 @@
 
                     <div class="form-group">
                         <label  class="required" data-max="300">Content</label>
-                        <textarea name="a_content" class="form-control" cols="10" rows="3">{{ old('a_content', $article->a_content ?? "") }}</textarea>
+                        <textarea name="a_content" id="content" class="form-control" cols="10" rows="3">{{ old('a_content', $article->a_content ?? "") }}</textarea>
                     </div>
                 </div>
             </div>
@@ -142,3 +142,17 @@
         </div>
     </div>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript">
+
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+
+    CKEDITOR.replace( 'content' ,options);
+</script>
