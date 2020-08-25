@@ -14,7 +14,7 @@ class BlogMenuController extends BaseBlogController
     {
         $menu     = Menu::findOrFail($id);
         $articles = Article::where('a_menu_id', $id)
-            ->select('id','a_name','a_slug','a_avatar','a_menu_id')
+            ->select('id','a_name','a_slug','a_avatar','a_menu_id','a_description')
             ->orderByDesc('id')
             ->paginate(10);
 

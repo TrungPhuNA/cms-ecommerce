@@ -36,6 +36,46 @@
                 </div>
             </div>
         </div>
+        <section style="margin-top: 20px;">
+            <div class="articles-box">
+                @for ($i = 1 ; $i <= 8 ; $i ++)
+                    <div class="item">
+                        <a href="" class="image">
+                            <img src="https://media.lamchame.vn/images/2020/08/25/photo1598322274444-15983222746101635804100_255x143.jpg" alt="">
+                        </a>
+                        <h3 class="title">
+                            <a href="">Bắt gặp HS lớp 5 hôn nhau, phụ huynh hóa đá, con bảo 'muốn ngửi mùi cơ thể của nhau'!?</a>
+                        </h3>
+                    </div>
+                @endfor
+                <div style="clear: both"></div>
+            </div>
+        </section>
+        <section style="margin-top: 20px;">
+            <div class="box">
+                <div class="box-70" style="margin-right: 15px">
+                    <div class="heading-block">
+                        <h2 class="title"><a href="">Ăn Chơi</a></h2>
+                    </div>
+                    @include('pages.components._inc_articles',['articles' => $articlesNews])
+                </div>
+                <div class="box-30">
+                    <div class="read-much">
+                        <h3 class="title">ĐỌC NHIỀU</h3>
+                        <div class="group-item">
+                            @for ($i = 1 ; $i <= 10; $i ++)
+                                <div class="item">
+                                    <div class="number">1</div>
+                                    <h4 class="title">
+                                        <a href="" title="">Lời khai rùng mình của mẹ ruột và gã bố dượng bạo hành bé 3 tuổi trong suốt 24h</a>
+                                    </h4>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 @stop
 
