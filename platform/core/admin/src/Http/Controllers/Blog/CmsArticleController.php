@@ -43,6 +43,7 @@ class CmsArticleController extends CmsAdminController
     {
         $data               = $request->except('_token', 'avatar', 'tags');
         $data['created_at'] = Carbon::now();
+        $data['a_author_id'] = get_data_user('admins');
         $id                 = Article::insertGetId($data);
         if ($id) {
             RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);

@@ -2,6 +2,7 @@
 
 namespace App\Models\Blog;
 
+use App\Models\Acl\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
@@ -29,6 +30,11 @@ class Article extends Model
     public function menu()
     {
         return $this->belongsTo(Menu::class,'a_menu_id');
+    }
+
+    public function auth()
+    {
+        return $this->belongsTo(Admin::class,'a_author_id');
     }
 
     public function getStatus()

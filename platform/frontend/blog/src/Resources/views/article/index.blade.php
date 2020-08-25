@@ -13,7 +13,7 @@
             <div class="box-70">
                 <h1><strong>{{ $articleDetail->a_name }}</strong></h1>
                 <div class="copyright-date">
-                    <span class="copyright-name">phuong quyen</span>
+                    <span class="copyright-name">{{ $articleDetail->auth->name ?? "[N\A]" }}</span>
                     <span class="fa fa-clock date">{{ $articleDetail->created_at->format('H:s d/m/y') }}</span>
                 </div>
                 <div class="article_content">{!! $articleDetail->a_content !!}</div>

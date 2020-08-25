@@ -11,7 +11,7 @@ class BlogArticleController extends BaseBlogController
 {
     public function index(Request $request, $id)
     {
-        $article      = Article::with('menu:id,mn_name,mn_slug')->findOrFail($id);
+        $article      = Article::with('menu:id,mn_name,mn_slug','auth:id,name')->findOrFail($id);
         $articlesNews = Article::with('menu:id,mn_name,mn_slug', 'tags')
             ->orderByDesc('id')
             ->limit(10)

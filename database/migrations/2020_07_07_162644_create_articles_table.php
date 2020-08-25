@@ -26,6 +26,12 @@ class CreateArticlesTable extends Migration
             $table->text('a_content')->nullable();
             $table->string('a_title_seo')->nullable();
             $table->string('a_description_seo')->nullable();
+            $table->integer('a_author_id')->index()->default(0);
+            $table->tinyInteger('a_position_1')->default(0);
+            $table->tinyInteger('a_position_2')->default(0);
+            $table->tinyInteger('a_position_3')->default(0);
+            $table->tinyInteger('a_position_4')->default(0);
+            $table->tinyInteger('a_position_5')->default(0);
             $table->timestamps();
         });
     }
