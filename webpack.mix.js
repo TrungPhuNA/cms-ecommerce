@@ -43,6 +43,10 @@ let build_scss = [
         from: 'resources/sass/frontend/pages/menu/index.scss',
         to: 'css/menu.css'
     },
+    {
+        from: 'resources/sass/frontend/pages/article_detail/index.scss',
+        to: 'css/article_detail.css'
+    },
 ];
 
 build_js.map((file) => {

@@ -14,7 +14,7 @@
                     </div>
                 @endfor
             </div>
-            @include('pages.components._inc_articles')
+            @include('pages.components._inc_articles',['articles' => $articles ?? []])
         </div>
         <div class="box-30 box-right-banner">
             <div class="top">
