@@ -132,6 +132,35 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
+                        <label  class="required">Position</label>
+                        <div class="form-group mb-0 justify-content-end">
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" name="a_position_1"
+                                           {{ ($article->a_position_1 ?? 0) == 1 ? "checked='checked'" : "" }}
+                                           class="custom-control-input" id="checkbox-1">
+                                    <label for="checkbox-1" class="custom-control-label mt-1">
+                                        <span data-placement="top" data-toggle="tooltip-primary" title="" type="button" data-original-title="Vị Trí 3 bài nổi bật ở trang chủ">Nổi bật trang chủ</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" name="a_position_2"
+                                           {{ ($article->a_position_2 ?? 0) == 1 ? "checked='checked'" : "" }}
+                                           class="custom-control-input" id="checkbox-2">
+                                    <label for="checkbox-2" class="custom-control-label mt-1">
+                                        <span data-placement="top" data-toggle="tooltip-primary" title="" type="button" data-original-title="Bài nóng trang chủ">Mục nóng trang chủ</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
                         <label  class="required">Avatar</label>
                         <div class="form-group">
                             <input type="file" class="my-pond" name="avatar">

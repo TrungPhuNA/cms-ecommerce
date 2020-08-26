@@ -41,9 +41,10 @@ class CmsArticleController extends CmsAdminController
 
     public function store(AdminArticleRequest $request)
     {
-        $data               = $request->except('_token', 'avatar', 'tags');
+        $data               = $request->except('_token', 'avatar', 'tags','a_position_1');
         $data['created_at'] = Carbon::now();
         $data['a_author_id'] = get_data_user('admins');
+        if ($request->a_position_1) $data['a_position_1'] = 1;
         $id                 = Article::insertGetId($data);
         if ($id) {
             RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);
@@ -77,8 +78,9 @@ class CmsArticleController extends CmsAdminController
 
     public function update(AdminArticleRequest $request, $id)
     {
-        $data               = $request->except('_token', 'avatar', 'tags');
+        $data               = $request->except('_token', 'avatar', 'tags','a_position_1');
         $data['updated_at'] = Carbon::now();
+        if ($request->a_position_1) $data['a_position_1'] = 1;
 
         if ($request->avatar)
         {
