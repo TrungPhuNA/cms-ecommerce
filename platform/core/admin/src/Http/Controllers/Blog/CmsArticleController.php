@@ -41,10 +41,11 @@ class CmsArticleController extends CmsAdminController
 
     public function store(AdminArticleRequest $request)
     {
-        $data               = $request->except('_token', 'avatar', 'tags','a_position_1');
+        $data               = $request->except('_token', 'avatar', 'tags','a_position_1','a_position_2');
         $data['created_at'] = Carbon::now();
         $data['a_author_id'] = get_data_user('admins');
         if ($request->a_position_1) $data['a_position_1'] = 1;
+        if ($request->a_position_2) $data['a_position_2'] = 1;
         $id                 = Article::insertGetId($data);
         if ($id) {
             RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);
@@ -78,9 +79,18 @@ class CmsArticleController extends CmsAdminController
 
     public function update(AdminArticleRequest $request, $id)
     {
-        $data               = $request->except('_token', 'avatar', 'tags','a_position_1');
+        $data               = $request->except('_token', 'avatar', 'tags','a_position_1','a_position_2');
         $data['updated_at'] = Carbon::now();
-        if ($request->a_position_1) $data['a_position_1'] = 1;
+        if ($request->a_position_1) {
+            $data['a_position_1'] = 1;
+        }else{
+            $data['a_position_1'] = 0;
+        }
+        if ($request->a_position_2) {
+            $data['a_position_2'] = 1;
+        }else{
+            $data['a_position_2'] = 0;
+        }
 
         if ($request->avatar)
         {
