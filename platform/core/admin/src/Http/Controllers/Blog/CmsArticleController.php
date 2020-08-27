@@ -92,16 +92,6 @@ class CmsArticleController extends CmsAdminController
             $data['a_position_2'] = 0;
         }
 
-        if ($request->avatar)
-        {
-            $file = uploadsFile('avatar');
-            if (isset($file['code']) && $file['code'] == 1)
-            {
-                dd($file);
-                $data['a_avatar'] = $file['name'];
-            }
-        }
-
         Article::findOrFail($id)->update($data);
         RenderUrlSeoBlogServices::renderUrlBLog($request->a_slug, SeoBlog::TYPE_ARTICLE, $id);
         if ($tags = $request->tags) $this->syncTags($tags, $id);

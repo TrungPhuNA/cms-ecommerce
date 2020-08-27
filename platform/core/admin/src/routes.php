@@ -10,6 +10,9 @@ include __DIR__."/routes/route_acl.php";
 Route::group(['prefix' => 'cms-admin/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+Route::group(['prefix' => 'ajax','namespace' => 'Ajax'], function (){
+    Route::post('upload-images','CmsUploadImagesController@uploads')->name('cms_post_ajax.upload_images');
+});
 
 Route::group(['prefix' => 'system', 'namespace' => 'System'], function () {
     Route::group(['prefix' => 'information'], function () {

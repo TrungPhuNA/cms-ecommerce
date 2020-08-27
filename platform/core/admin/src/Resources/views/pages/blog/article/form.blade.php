@@ -164,6 +164,7 @@
                         <label  class="required">Avatar</label>
                         <div class="form-group">
                             <input type="file" class="my-pond" name="avatar">
+                            <input type="hidden" value="" id="avatar_uploads" name="a_avatar" >
                         </div>
                     </div>
                 </div>

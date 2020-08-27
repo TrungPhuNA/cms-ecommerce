@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <div class="home container content-global">
-        @include('pages.home.include._inc_article_one')
+        @include('pages.home.include._inc_article_one',['articles' => $articlesPositionTop ?? []])
         @include('pages.home.include._inc_article_two')
         @include('pages.home.include._inc_article_three')
         @include('pages.home.include._inc_article_four')

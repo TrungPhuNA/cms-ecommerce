@@ -4,18 +4,31 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 var InitFilepond = {
     init : function () {
         FilePond.setOptions({
-            server: 'http://127.0.0.1'
+            server: {
+                url: 'http://localhost:8884/',
+                process: {
+                    url: './cms-admin/ajax/upload-images',
+                    method: 'POST',
+                    withCredentials: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    timeout: 7000,
+                    onload: (response) => {
+                        let objectResult = JSON.parse(response)
+                        console.log(objectResult.file)
+                        $("#avatar_uploads").val(objectResult.file)
+                    },
+                    onerror: null,
+                }
+            },
         });
+
         FilePond.registerPlugin(
             FilePondPluginImagePreview,
         );
         FilePond.create( document.querySelector('input[type="file"]'))
-
-        // var files = $('.my-pond').filepond('getFiles');
-        // $(files).each(function (index) {
-        //     console.log(files[index].fileExtension);
-        // });
-    }
+    },
 }
 
 export default InitFilepond

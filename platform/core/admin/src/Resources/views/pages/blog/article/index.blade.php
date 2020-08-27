@@ -54,7 +54,7 @@
                                             </label>
                                         </td>
                                         <td>
-                                            <img src="{{ asset('images/default.jpg') }}" style="width: 60px;height: 60px;" alt="">
+                                            <img src="{{ pare_url_file($article->a_avatar)  }}" style="width: 60px;height: 60px;" alt="">
                                         </td>
                                         <td>{{ $article->a_name }} </td>
                                         <td>{{ $article->menu->mn_name ?? "[N\A]" }} </td>

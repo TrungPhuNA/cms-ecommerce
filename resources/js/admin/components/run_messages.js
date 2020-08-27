@@ -3,6 +3,15 @@ import {confirmDemo, confirmSw2, notify} from "./run_notifi";
 var RunMessages = {
     init : function () {
         this.runMessages()
+        this.runToken()
+    },
+    runToken()
+    {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
     },
     runMessages() {
         if (typeof TYPE_MESSAGE != "undefined")
