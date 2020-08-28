@@ -25,7 +25,7 @@
                             <select name="a_menu_id" class="form-control SlectBox SumoUnder" tabindex="-1">
                                 <option title="" value="">__Chọn menu__</option>
                                 @foreach($menus as $item)
-                                    <option title="{{ $item->mn_name }}" value="{{ $item->id }} " {{ (old('a_parent_id',$article->a_menu_id ?? 0)) == $item->id ? "selected='selected'" : "" }}>
+                                    <option title="{{ $item->mn_name }}" value="{{ $item->id }} " {{ (old('a_menu_id',$article->a_menu_id ?? 0)) == $item->id ? "selected='selected'" : "" }}>
                                         <?php $str = '' ;for($i = 0; $i < $item->level; $i ++){ echo $str; $str .= '--- '; }?>
                                         {{ $item->mn_name }}
                                     </option>
@@ -164,7 +164,7 @@
                         <label  class="required">Avatar</label>
                         <div class="form-group">
                             <input type="file" class="my-pond" name="avatar">
-                            <input type="hidden" value="" id="avatar_uploads" name="a_avatar" >
+                            <input type="hidden" value="{{ old('a_avatar',$article->a_avatar ?? '') }}" id="avatar_uploads" name="a_avatar" >
                         </div>
                     </div>
                 </div>

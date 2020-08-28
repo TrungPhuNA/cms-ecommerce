@@ -22,9 +22,19 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
 
+        $articlesPositionBox = Article::with('auth:id,name')
+        ->where([
+            'a_position_2' => 1,
+            'a_status'     => Article::STATUS_PUBLIC
+        ])->select('a_name', 'a_slug', 'a_avatar')
+            ->orderByDesc('id')
+            ->limit(18)
+            ->get();
+
         $viewData = [
             'articles'            => $articles,
-            'articlesPositionTop' => $articlesPositionTop
+            'articlesPositionTop' => $articlesPositionTop,
+            'articlesPositionBox' => $articlesPositionBox
         ];
         return view('pages.home.index', $viewData);
     }

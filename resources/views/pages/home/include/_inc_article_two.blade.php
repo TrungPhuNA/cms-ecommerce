@@ -3,16 +3,16 @@
     <div class="box">
         <div class="box-70">
             <div class="owl-carousel" id="owl-box-two">
-                @for ($j = 1 ; $j <= 3 ; $j ++)
+                @foreach($articles->chunk(6) as $lists)
                     <div class="item">
-                        @for($i = 1; $i <= 6; $i ++)
-                            <div class="articles articles-{{ $i }}">
-                                <h3 class="title"><a href="">Kinh nghiệm:  Trứng Hấp Nấm Rơm Phiên Bản Ngon Ngon Luôn</a></h3>
-                                <div class="copyright">Bởi venhaancom</div>
+                        @foreach($lists as $article)
+                            <div class="articles">
+                                <h3 class="title"><a href="{{ link_article($article) }}" title="{{ $article->a_name }}">{{ $article->a_name }}</a></h3>
+                                <div class="copyright">Bởi {{ $article->auth->name ?? "[N\A]" }}</div>
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
-                @endfor
+                @endforeach
             </div>
             @include('pages.components._inc_articles',['articles' => $articles ?? []])
         </div>

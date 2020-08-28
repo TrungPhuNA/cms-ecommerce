@@ -5,6 +5,7 @@ namespace Frontend\Blog\Http\Controllers;
 
 
 use App\Models\Blog\Article;
+use App\Service\CountView\ProcessViewService;
 use Illuminate\Http\Request;
 
 class BlogArticleController extends BaseBlogController
@@ -16,6 +17,9 @@ class BlogArticleController extends BaseBlogController
             ->orderByDesc('id')
             ->limit(10)
             ->get();
+
+        //2. Xử lý view
+        ProcessViewService::view('articles', 'a_view', 'article', $id);
 
         $viewData = [
             'articlesNews'  => $articlesNews,
