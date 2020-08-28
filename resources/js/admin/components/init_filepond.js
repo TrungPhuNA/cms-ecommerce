@@ -5,7 +5,7 @@ var InitFilepond = {
     init : function () {
         FilePond.setOptions({
             server: {
-                url: 'http://localhost:8884/',
+                url: 'http://cms-laravel.info/',
                 process: {
                     url: './cms-admin/ajax/upload-images',
                     method: 'POST',
