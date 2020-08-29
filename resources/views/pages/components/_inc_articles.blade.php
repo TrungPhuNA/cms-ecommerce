@@ -3,7 +3,7 @@
         <article class="articles-item">
             <div class="logo">
                 <a href="{{ link_article($article) }}" title="{{ $article->a_name }}" class="image">
-                    <img src="https://media.lamchame.vn/images/2020/08/24/photo1598187206028-159818720625333336770_255x143.jpg"
+                    <img src="{{ pare_url_file($article->a_avatar) }}"
                          alt="{{ $article->a_name }}">
                 </a>
             </div>

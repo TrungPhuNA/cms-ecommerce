@@ -15,6 +15,7 @@
         <div id="main">
             @yield('content')
         </div>
+        @include('pages.components._inc_box_email')
         @yield('script')
     </body>
 </html>

@@ -17,7 +17,7 @@ class HomeController extends Controller
         $articlesPositionTop = Article::where([
             'a_position_1' => 1,
             'a_status'     => Article::STATUS_PUBLIC
-        ])->select('a_name', 'a_slug', 'a_avatar')
+        ])->select('a_name', 'a_slug', 'a_avatar','a_description')
             ->orderByDesc('id')
             ->limit(3)
             ->get();
@@ -26,7 +26,7 @@ class HomeController extends Controller
         ->where([
             'a_position_2' => 1,
             'a_status'     => Article::STATUS_PUBLIC
-        ])->select('a_name', 'a_slug', 'a_avatar')
+        ])->select('a_name', 'a_slug', 'a_avatar','a_description')
             ->orderByDesc('id')
             ->limit(18)
             ->get();
