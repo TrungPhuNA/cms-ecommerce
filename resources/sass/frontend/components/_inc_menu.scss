@@ -10,11 +10,14 @@
     .home-link {
         position: absolute;
         left: 10px;
-        top: 0px;
+        top: 1px;
         text-decoration: none;
+        span {
+            font-size: 20px;
+        }
     }
     ul {
-        padding-left: 20px;
+        padding-left: 30px;
         li {
             display: inline;
             padding: 0 8px;

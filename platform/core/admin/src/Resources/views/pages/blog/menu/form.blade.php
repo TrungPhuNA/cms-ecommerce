@@ -108,6 +108,21 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label  class="required">Bài viết nổi bật</label>
+                        <select name="articles[]" class="form-control js-select2-articles" tabindex="-1" multiple="multiple">
+                            <option title="" value="">__Bài viết__</option>
+                            @foreach($articles as $item)
+                                <option title="{{ $item->a_name }}" {{ in_array($item->id, $articlesOld ?? []) ? "selected='selected'" : ""}} value="{{ $item->id }} ">
+                                    {{ $item->a_name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>

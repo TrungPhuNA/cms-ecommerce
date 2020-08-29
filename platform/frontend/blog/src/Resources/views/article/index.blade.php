@@ -62,16 +62,7 @@
                 <div class="box-30">
                     <div class="read-much">
                         <h3 class="title">ĐỌC NHIỀU</h3>
-                        <div class="group-item">
-                            @for ($i = 1 ; $i <= 10; $i ++)
-                                <div class="item">
-                                    <div class="number">1</div>
-                                    <h4 class="title">
-                                        <a href="" title="">Lời khai rùng mình của mẹ ruột và gã bố dượng bạo hành bé 3 tuổi trong suốt 24h</a>
-                                    </h4>
-                                </div>
-                            @endfor
-                        </div>
+                        @include('blog::article.include._inc_top_view',['articles' => $articlesViews])
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace Core\Admin\Http\Controllers\Blog;
 
 use App\Http\Requests\AdminMenuRequest;
+use App\Models\Blog\Article;
 use App\Models\Blog\Menu;
 use App\Models\Blog\SeoBlog;
 use App\Service\Menus\MenusService;
@@ -24,32 +25,39 @@ class CmsMenuController extends CmsAdminController
 
     public function create()
     {
-         MenusService::getInstance()->recursive(0, 1, $menus);
-         $menus = $menus ?? [];
-        return view('admin::pages.blog.menu.create', compact('menus'));
+        MenusService::getInstance()->recursive(0, 1, $menus);
+        $menus    = $menus ?? [];
+        $articles = Article::select('id', 'a_name')->orderByDesc('id')->get();
+
+        return view('admin::pages.blog.menu.create', compact('menus', 'articles'));
     }
 
     public function store(AdminMenuRequest $request)
     {
-        $data               = $request->except('_token');
-        $data['created_at'] = Carbon::now();
-        $id                 = Menu::insertGetId($data);
+        $data                   = $request->except('_token', 'articles');
+        $data['created_at']     = Carbon::now();
+        $data['mn_article_hot'] = json_encode($request->articles ?? []);
+        $id                     = Menu::insertGetId($data);
         if ($id) {
             $this->showSuccessMessages();
             RenderUrlSeoBlogServices::renderUrlBLog($request->mn_slug, SeoBlog::TYPE_MENU, $id);
             return redirect()->back();
         }
         $this->showErrorMessages();
-        return  redirect()->back();
+        return redirect()->back();
     }
 
     public function edit($id)
     {
-        $menu     = Menu::findOrFail($id);
+        $menu = Menu::findOrFail($id);
         MenusService::getInstance()->recursive(0, 1, $menus);
-        $viewData = [
-            'menu'  => $menu,
-            'menus' => $menus ?? []
+        $articles    = Article::select('id', 'a_name')->orderByDesc('id')->get();
+        $articlesOld = json_decode($menu->mn_article_hot, true);
+        $viewData    = [
+            'menu'        => $menu,
+            'menus'       => $menus ?? [],
+            'articles'    => $articles,
+            'articlesOld' => $articlesOld
         ];
 
         return view('admin::pages.blog.menu.update', $viewData);
@@ -57,8 +65,9 @@ class CmsMenuController extends CmsAdminController
 
     public function update(AdminMenuRequest $request, $id)
     {
-        $data               = $request->except('_token');
-        $data['updated_at'] = Carbon::now();
+        $data                   = $request->except('_token', 'articles');
+        $data['updated_at']     = Carbon::now();
+        $data['mn_article_hot'] = json_encode($request->articles ?? []);
 
         Menu::findOrFail($id)->update($data);
         RenderUrlSeoBlogServices::renderUrlBLog($request->mn_slug, SeoBlog::TYPE_MENU, $id);
@@ -68,7 +77,7 @@ class CmsMenuController extends CmsAdminController
 
     public function delete(Request $request, $id)
     {
-        if ($request->ajax()){
+        if ($request->ajax()) {
             $menu = Menu::find($id);
             SeoBlog::where([
                 'sb_md5'  => md5($menu->mn_slug),
