@@ -93,6 +93,14 @@
             .title {
                 font-size: 15px;
                 line-height: 20px;
+                height: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                a {
+
+                }
             }
             .copyright {
 
@@ -214,6 +222,9 @@
                 object-fit: cover;
             }
         }
+    }
+    .heading-block {
+        margin-top: 20px;
     }
     .link {
         margin-top: 10px;

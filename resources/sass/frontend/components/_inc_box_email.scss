@@ -1,0 +1,32 @@
+.box-email {
+    background: #a2edde;
+    margin-top: 20px;
+    padding: 10px 0;
+    .box-left {
+        flex: 0 0 20%;
+        margin-right: 2%;
+    }
+    .box-right {
+        flex: 0 0 78%;
+        form {
+            width: 80%;
+            float: right;
+            display: flex;
+            flex-direction: row-reverse;
+            input {
+
+            }
+            .error {
+                color: red;
+                font-weight: 400;
+            }
+            button {
+                background-color: $pink-dark;
+            }
+            .form-group {
+                width: 80%;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
