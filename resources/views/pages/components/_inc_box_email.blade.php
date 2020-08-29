@@ -4,10 +4,11 @@
             <a href="" title="Trang chủ">CmsLaravel<span>.info</span></a>
         </div>
         <div class="box-right">
-            <form action="" id="form-email">
-                <button type="submit" class="btn"><i class="fa fa-save"></i></button>
+            <form action="" id="form-email" method="POST">
+                <button type="submit" class="btn js-process-email"><i class="fa fa-save"></i></button>
                 <div class="form-group">
-                    <input type="text" name="email" required class="form-control" placeholder="Email ...">
+                    <input type="text" name="g_email" required class="form-control" placeholder="Email ...">
+                    <small class="error-form"></small>
                 </div>
             </form>
         </div>

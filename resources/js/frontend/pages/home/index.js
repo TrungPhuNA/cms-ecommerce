@@ -3,6 +3,15 @@ import BoxEmail from "../../components/_inc_box_email";
 var Home = {
     init : function () {
         this.runBoxTwo()
+        this.runToken()
+    },
+    runToken()
+    {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
     },
     runBoxTwo()
     {
