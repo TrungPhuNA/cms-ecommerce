@@ -10,37 +10,49 @@
             </h1>
         </div>
         <div class="box">
+
             <div class="box-70">
+                @if (!empty($articlesHot))
                 <div class="box">
+                    @php
+                        $articleHotTop = $articlesHot->splice(0,1) ?? "";
+                    @endphp
                     <div class="box-65" style="margin-right: 10px;">
+                        @if (isset($articleHotTop) && $article = $articleHotTop[0])
                         <article class="articles-item">
                             <div class="logo">
-                                <a href="" class="image">
-                                    <img src="https://media.lamchame.vn/images/2020/08/24/photo1598187206028-159818720625333336770_255x143.jpg" alt="">
+                                <a href="{{ link_article($article) }}" title="{{ $article->a_name }}" class="image">
+                                    <img src="{{ pare_url_file($article->a_avatar) }}" style="max-height: 290px;" alt="{{ $article->a_name }}">
                                 </a>
                             </div>
                             <h2 class="title">
-                                <a href="">Những loại rau kỳ lạ có giá đắt hơn cả thịt cá ở Việt Nam, muốn mua ăn không phải chuyện dễ</a>
+                                <a href="{{ link_article($article) }}" title="{{ $article->a_name }}">{{ $article->a_name }}</a>
                             </h2>
-                            <summary>Đôi lúc, sự việc nên nhìn từ nhiều phía, kể cả vấn đề trong tình yêu cũng nên như vậy.</summary>
+                            <summary>{{ $article->a_description }}</summary>
                         </article>
+                        @endif
                     </div>
                     <div class="box-35">
-                        @for ($i = 1 ; $i <= 2 ; $i ++)
+                        @php
+                            $articleHotTop = $articlesHot->splice(1,2) ?? [];
+                        @endphp
+                        @forelse($articleHotTop as $article)
                             <article class="articles-item">
                                 <div class="logo">
-                                    <a href="" class="image">
-                                        <img src="https://media.lamchame.vn/images/2020/08/24/photo1598198848240-15981988485831407333595_480x270.jpg" alt="">
+                                    <a href="{{ link_article($article) }}" title="{{ $article->a_name }}" class="image">
+                                        <img src="{{ pare_url_file($article->a_avatar) }}" alt="{{ $article->a_name }}">
                                     </a>
                                 </div>
                                 <h3 class="title">
-                                    <a href="">Những loại rau kỳ lạ có giá đắt hơn cả thịt cá ở Việt Nam, muốn mua ăn không phải chuyện dễ</a>
+                                    <a href="{{ link_article($article) }}" title="{{ $article->a_name }}">{{ $article->a_name }}</a>
                                 </h3>
                             </article>
                             <div style="clear: both"></div>
-                        @endfor
+                        @empty
+                        @endforelse
                     </div>
                 </div>
+                @endif
                 @include('pages.components._inc_articles')
             </div>
             <div class="box-30 box-right-banner" style="margin-left: 10px;">
