@@ -19,6 +19,7 @@ class CreateMenusTable extends Migration
             $table->string('mn_slug')->unique()->index();
             $table->tinyInteger('mn_sort')->default(1)->index();
             $table->string('mn_description')->nullable();
+            $table->string('mn_article_hot')->nullable();
             $table->integer('mn_parent_id')->default(0)->index();
             $table->string('mn_title_seo')->nullable();
             $table->string('mn_description_seo')->nullable();

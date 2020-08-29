@@ -33,14 +33,11 @@
                         @endif
                     </div>
                     <div class="box-35">
-                        @php
-                            $articleHotTop = $articlesHot->splice(1,2) ?? [];
-                        @endphp
-                        @forelse($articleHotTop as $article)
+                        @forelse($articlesHot as $article)
                             <article class="articles-item">
                                 <div class="logo">
                                     <a href="{{ link_article($article) }}" title="{{ $article->a_name }}" class="image">
-                                        <img src="{{ pare_url_file($article->a_avatar) }}" alt="{{ $article->a_name }}">
+                                        <img src="{{ pare_url_file($article->a_avatar) }}" style="height: 160px;" alt="{{ $article->a_name }}">
                                     </a>
                                 </div>
                                 <h3 class="title">
