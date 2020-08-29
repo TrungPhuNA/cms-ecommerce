@@ -23,6 +23,11 @@ class CreateMenusTable extends Migration
             $table->integer('mn_parent_id')->default(0)->index();
             $table->string('mn_title_seo')->nullable();
             $table->string('mn_description_seo')->nullable();
+            $table->tinyInteger('mn_position_1')->default(0);
+            $table->tinyInteger('mn_position_2')->default(0);
+            $table->tinyInteger('mn_position_3')->default(0);
+            $table->tinyInteger('mn_position_4')->default(0);
+            $table->tinyInteger('mn_position_5')->default(0);
             $table->tinyInteger('mn_status')->index()->default(0);
             $table->timestamps();
         });
