@@ -34,9 +34,12 @@ class CmsMenuController extends CmsAdminController
 
     public function store(AdminMenuRequest $request)
     {
-        $data                   = $request->except('_token', 'articles');
+        $data                   = $request->except('_token', 'articles','mn_position_2','mn_position_1');
         $data['created_at']     = Carbon::now();
         $data['mn_article_hot'] = json_encode($request->articles ?? []);
+        if ($request->mn_position_1) $data['mn_position_1'] = 1;
+        if ($request->mn_position_2) $data['mn_position_2'] = 1;
+
         $id                     = Menu::insertGetId($data);
         if ($id) {
             $this->showSuccessMessages();
@@ -65,8 +68,19 @@ class CmsMenuController extends CmsAdminController
 
     public function update(AdminMenuRequest $request, $id)
     {
-        $data                   = $request->except('_token', 'articles');
+        $data                   = $request->except('_token', 'articles','mn_position_2','mn_position_1');
         $data['updated_at']     = Carbon::now();
+
+        if ($request->mn_position_1) {
+            $data['mn_position_1'] = 1;
+        }else{
+            $data['mn_position_1'] = 0;
+        }
+        if ($request->mn_position_2) {
+            $data['mn_position_2'] = 1;
+        }else{
+            $data['mn_position_2'] = 0;
+        }
         $data['mn_article_hot'] = json_encode($request->articles ?? []);
 
         Menu::findOrFail($id)->update($data);

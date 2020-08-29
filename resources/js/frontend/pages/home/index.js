@@ -1,5 +1,6 @@
 import 'owl.carousel/dist/owl.carousel.min';
 import BoxEmail from "../../components/_inc_box_email";
+import TabMenu from "../../components/_inc_tab_menu";
 var Home = {
     init : function () {
         this.runBoxTwo()
@@ -31,4 +32,5 @@ var Home = {
 $(function () {
     Home.init()
     BoxEmail.init()
+    TabMenu.init()
 })

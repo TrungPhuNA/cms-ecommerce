@@ -31,6 +31,11 @@ class Menu extends Model
         return $this->belongsTo(Menu::class,'mn_parent_id','id');
     }
 
+    public function children()
+    {
+        return $this->hasMany(self::class,'mn_parent_id','id');
+    }
+
     public function getStatus()
     {
         return Arr::get($this->status, $this->mn_status,'[N\A]');

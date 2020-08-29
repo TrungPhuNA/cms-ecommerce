@@ -143,6 +143,9 @@
                     font-weight: 500;
                     font-size: 18px;
                     color: #666;
+                    &.active {
+                        color: #a2edde;
+                    }
                 }
             }
         }

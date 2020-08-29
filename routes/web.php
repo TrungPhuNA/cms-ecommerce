@@ -25,4 +25,7 @@ Route::get('/','HomeController@index')->name('get.home');
 Route::group(['prefix' => 'ajax','namespace' => 'Ajax'], function(){
     Route::post('save-email','AjaxSaveEmailController@saveEmail')
         ->name('ajax_post.email');
+
+    Route::post('next-tab','AjaxHomeController@loadActiveByMenu')
+        ->name('ajax_post.next_tab');
 });
