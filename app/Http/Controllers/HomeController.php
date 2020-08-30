@@ -52,12 +52,35 @@ class HomeController extends Controller
                 ->get();
         }
 
+        // Menu ở vị trí thứ 2
+        $menusHotTwo = Menu::where([
+            'mn_status'     => Menu::STATUS_PUBLIC,
+            'mn_position_2' => 1
+        ])->addSelect('id', 'mn_name', 'mn_slug')
+            ->orderByDesc('id')
+            ->get();
+
+        $articlesByMenuHotTwo = [];
+        if ($menusHotTwo) {
+            foreach ($menusHotTwo as $menu) {
+                $articles                                 = Article::where([
+                    'a_status'  => 3,
+                    'a_menu_id' => $menu->id
+                ])->select('a_name', 'a_slug', 'a_avatar', 'a_description', 'a_menu_id')
+                    ->orderByDesc('id')
+                    ->limit(5)
+                    ->get();
+                $articlesByMenuHotTwo[json_encode($menu)] = $articles;
+            }
+        }
+
         $viewData = [
-            'articles'            => $articles,
-            'articlesPositionTop' => $articlesPositionTop,
-            'articlesPositionBox' => $articlesPositionBox,
-            'menusHot'            => $menusHot,
-            'articlesHotMenu'     => $articlesHotMenu ?? []
+            'articles'             => $articles,
+            'articlesPositionTop'  => $articlesPositionTop,
+            'articlesPositionBox'  => $articlesPositionBox,
+            'menusHot'             => $menusHot,
+            'articlesHotMenu'      => $articlesHotMenu ?? [],
+            'articlesByMenuHotTwo' => $articlesByMenuHotTwo
         ];
         return view('pages.home.index', $viewData);
     }

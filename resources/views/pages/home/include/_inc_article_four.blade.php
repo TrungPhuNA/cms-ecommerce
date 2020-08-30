@@ -1,47 +1,47 @@
 <section class="box-four">
     <div class="box">
+        @if (!empty($articlesByMenuHotTwo))
         <div class="box-70">
             <div class="box">
-                <div class="box-50" style="margin-right: 10px;">
+                @foreach($articlesByMenuHotTwo as $menu => $articles)
+                    @php
+                        $menu = json_decode($menu);
+                    @endphp
+                    <div class="box-50" style="margin-right: 10px;">
                     <div class="heading-block">
-                        <h2 class="title"><a href="">Ăn Chơi</a></h2>
+                        <h2 class="title"><a href="{{ link_menu($menu) }}" title="{{ $menu->mn_name }}">{{ $menu->mn_name }}</a></h2>
                     </div>
                     <article>
-                        <div class="logo">
-                            <a href="" class="image">
-                                <img src="https://media.lamchame.vn/images/2020/08/24/photo1598198848240-15981988485831407333595_480x270.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="title">
-                            <a href="">Những loại rau kỳ lạ có giá đắt hơn cả thịt cá ở Việt Nam, muốn mua ăn không phải chuyện dễ</a>
-                        </h3>
+                        @php
+                            $articleTop = $articles->splice(0,1) ?? "";
+                        @endphp
+                        @if (isset($articleTop[0]) && $article = $articleTop[0])
+                            <div class="logo">
+                                <a href="{{ link_article($article) }}" title="{{ $article->a_name }}" class="image">
+                                    <img src="{{ pare_url_file($article->a_avatar) }}" style="height: 230px" alt="{{ $article->a_name }}">
+                                </a>
+                            </div>
+                            <h3 class="title">
+                                <a href="{{ link_article($article) }}" title="{{ $article->a_name }}">{{ $article->a_name }}</a>
+                            </h3>
+                        @endif
+                        @php
+                            $articlesCenter = $articles->splice(1) ?? [];
+                        @endphp
+                        @if (!empty($articlesCenter))
                         <ul class="link">
-                            <li><a href="">Những thủ đoạn bắt cóc trẻ em mới ngày càng tinh vi, bố mẹ phải dạy con ngay các nguyên tắc an toàn này</a></li>
-                            <li><a href="">5 điều mà cha mẹ ở các quốc gia đứng đầu bảng xếp hạng nuôi dạy con tốt nhất đã làm để giúp trẻ thông minh vượt trội</a></li>
+                            @foreach($articlesCenter as $article)
+                                <li><a href="{{ link_article($article) }}" title="{{ $article->a_name }}">{{ $article->a_name }}</a></li>
+                            @endforeach
                         </ul>
+                        @endif
                     </article>
                 </div>
-                <div class="box-50">
-                    <div class="heading-block">
-                        <h2 class="title"><a href="">Ăn Chơi</a></h2>
-                    </div>
-                    <article>
-                        <div class="logo">
-                            <a href="" class="image">
-                                <img src="https://media.lamchame.vn/images/2020/08/24/photo1598198848240-15981988485831407333595_480x270.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="title">
-                            <a href="">Những loại rau kỳ lạ có giá đắt hơn cả thịt cá ở Việt Nam, muốn mua ăn không phải chuyện dễ</a>
-                        </h3>
-                        <ul class="link">
-                            <li><a href="">Những thủ đoạn bắt cóc trẻ em mới ngày càng tinh vi, bố mẹ phải dạy con ngay các nguyên tắc an toàn này</a></li>
-                            <li><a href="">5 điều mà cha mẹ ở các quốc gia đứng đầu bảng xếp hạng nuôi dạy con tốt nhất đã làm để giúp trẻ thông minh vượt trội</a></li>
-                        </ul>
-                    </article>
-                </div>
+                @endforeach
             </div>
         </div>
+        @endif
         <div class="box-30"></div>
+
     </div>
 </section>
