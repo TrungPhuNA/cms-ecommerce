@@ -1,4 +1,6 @@
+@import "./../../bases/variables";
 @import "./../../../library/admin/css/icons.css";
+@import "./../../../library/admin/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css";
 @import "./../../../library/admin/plugins/mscrollbar/jquery.mCustomScrollbar.css";
 @import "./../../../library/admin/plugins/sidebar/sidebar.css";
 @import "./../../../library/admin/plugins/select2/css/select2.min.css";
@@ -17,13 +19,13 @@
 @import '../components/header';
 @import "./../../../library/admin/switcher/css/switcher.css";
 @import "./../../../library/admin/switcher/demo.css";
-@import "./../../../library/admin/switcher/demo.css";
 @import '~filepond/dist/filepond.min.css';
 @import '~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 
 @import "../components/seo";
 @import "../components/checkbox";
 @import "../components/product";
+@import "../components/calendar";
 //assets/css/icons.css
 .position-static-save {
     position: fixed;

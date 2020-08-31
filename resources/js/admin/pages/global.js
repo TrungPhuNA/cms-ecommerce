@@ -8,6 +8,7 @@ import './../../../library/admin/plugins/rating/jquery.barrating.js'
 import './../../../library/admin/plugins/select2/js/select2.full.min.js'
 import './../../../library/admin/js/select2.js'
 import './../../../library/admin/plugins/sumoselect/jquery.sumoselect.js'
+import './../../../library/admin/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js'
 // import './../../../library/admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js'
 // import './../../../library/admin/plugins/perfect-scrollbar/p-scroll.js'
 import './../../../library/admin/plugins/jquery-sparkline/jquery.sparkline.min.js'
@@ -53,4 +54,8 @@ $(function () {
     ScrollTop.init()
     Tags.init()
     InitFilepond.init()
+    $('#datetimepicker').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true
+    });
 })

@@ -7,6 +7,7 @@ Route::get('', 'CmsAdminController@index')->name('cms_get.admin');
 include __DIR__.'/routes/route_blog.php';
 include __DIR__."/routes/route_ecommerce.php";
 include __DIR__."/routes/route_acl.php";
+include __DIR__."/routes/route_marketing.php";
 Route::group(['prefix' => 'cms-admin/laravel-filemanager'], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });

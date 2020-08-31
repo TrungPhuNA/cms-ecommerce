@@ -40,6 +40,15 @@
             </li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="index.html#">
+                    <span class="side-menu__label"><i class="la la-envelope"></i> Marketing </span><i class="angle la la-angle-down"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li><a class="slide-item" href="{{ route('cms_get.template_email.index') }}">Template</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.send_email.index') }}">Send Email</a></li>
+                </ul>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="index.html#">
                     <span class="side-menu__label"><i class="la la-sitemap"></i> Admin</span><i class="angle la la-angle-down"></i>
                 </a>
                 <ul class="slide-menu">
