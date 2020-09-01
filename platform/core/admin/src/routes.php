@@ -8,9 +8,9 @@ include __DIR__.'/routes/route_blog.php';
 include __DIR__."/routes/route_ecommerce.php";
 include __DIR__."/routes/route_acl.php";
 include __DIR__."/routes/route_marketing.php";
-Route::group(['prefix' => 'cms-admin/laravel-filemanager'], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+//Route::group(['prefix' => 'cms-admin/laravel-filemanager'], function () {
+//    \UniSharp\LaravelFilemanager\Lfm::routes();
+//});
 Route::group(['prefix' => 'ajax','namespace' => 'Ajax'], function (){
     Route::post('upload-images','CmsUploadImagesController@uploads')->name('cms_post_ajax.upload_images');
 });
@@ -26,5 +26,10 @@ Route::group(['prefix' => 'system', 'namespace' => 'System'], function () {
         Route::get('update/{id}', 'CmsPageStaticController@edit')->name('cms_get.page_static.edit');
         Route::post('update/{id}', 'CmsPageStaticController@update');
         Route::get('delete/{id}', 'CmsPageStaticController@delete')->name('cms_get.page_static.delete');
+    });
+
+    Route::group(['prefix' => 'email'], function () {
+        Route::get('', 'CmsSettingEmailController@index')->name('cms_get.email.index');
+        Route::post('create', 'CmsSettingEmailController@store')->name('cms_get.email.store');
     });
 });

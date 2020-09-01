@@ -64,6 +64,7 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('cms_get.information.index') }}">Information</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.page_static.index') }}">Pages</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.email.index') }}">Email</a></li>
                 </ul>
             </li>
         </ul>
