@@ -166,8 +166,9 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label  class="required">Avatar</label>
-                        <div class="SumoSelect sumo_somename" tabindex="0" role="button" aria-expanded="true">
-{{--                            <input type="file" class="my-pond" name="filepond"/>--}}
+                        <div class="form-group">
+                            <input type="file" class="my-pond" name="avatar">
+                            <input type="hidden" value="{{ old('pro_avatar',$product->pro_avatar ?? '') }}" id="avatar_uploads" name="pro_avatar" >
                         </div>
                     </div>
                 </div>

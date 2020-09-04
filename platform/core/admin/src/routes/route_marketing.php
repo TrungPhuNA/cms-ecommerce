@@ -19,7 +19,10 @@ Route::group(['prefix' => 'marketing', 'namespace' => 'Marketing'], function () 
         Route::post('create', 'CmsTemplateEmailSendUserController@store');
         Route::get('update/{id}', 'CmsTemplateEmailSendUserController@edit')->name('cms_get.send_email.update');
         Route::post('update/{id}', 'CmsTemplateEmailSendUserController@update');
-
         Route::get('delete/{id}', 'CmsTemplateEmailSendUserController@delete')->name('cms_get.send_email.delete');
+        Route::group(['prefix' => 'ajax'], function (){
+            Route::get('list-user/{id}','CmsTemplateEmailSendUserController@getListUserByIdSendEmail')
+                ->name('cms_ajax_get.users_send_email');
+        });
     });
 });

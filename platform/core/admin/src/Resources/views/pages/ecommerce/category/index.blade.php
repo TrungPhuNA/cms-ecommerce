@@ -44,6 +44,7 @@
                                         </label>
                                     </th>
                                     <th>Name</th>
+                                    <th>Image</th>
                                     <th>Parent</th>
                                     <th>Seo</th>
                                     <th class="text-center">Stt</th>
@@ -65,6 +66,9 @@
                                         <td>
                                             <?php $str = '' ;for($i = 0; $i < $category->level; $i ++){ echo $str; $str .= '---- '; }?>
                                             {{ $category->c_name }}
+                                        </td>
+                                        <td>
+                                            <img src="{{ pare_url_file($category->c_avatar)  }}" style="width: 60px;height: 60px;" alt="">
                                         </td>
                                         <td>{{ $category->parent->c_name ?? "__ROOT__" }} </td>
                                         <td>

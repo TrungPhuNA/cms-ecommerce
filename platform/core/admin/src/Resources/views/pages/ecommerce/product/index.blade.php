@@ -54,7 +54,7 @@
                                             </label>
                                         </td>
                                         <td>
-                                            <img src="{{ asset('images/default.jpg') }}" style="width: 60px;height: 60px;" alt="">
+                                            <img src="{{ pare_url_file($product->pro_avatar) }}" style="width: 60px;height: 60px;" alt="">
                                         </td>
                                         <td>{{ $product->pro_name }} </td>
                                         <td>{{ $product->category->c_name ?? "[N\A]" }} </td>

@@ -59,7 +59,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::middleware(['web','setLocale'])
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
@@ -82,7 +82,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapAdminRoutes()
     {
         Route::prefix('cms-admin')
-            ->middleware(['web','check_admin_login'])
+            ->middleware(['web','check_admin_login','setLocale'])
             ->namespace($this->namespaceAdmin)
             ->group(base_path('platform/core/admin/src/routes.php'));
     }
@@ -90,7 +90,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapProductRoutes()
     {
         Route::prefix('san-pham')
-            ->middleware(['web'])
+            ->middleware(['web','setLocale'])
             ->namespace($this->namespaceProduct)
             ->group(base_path('platform/frontend/product/src/routes.php'));
     }
@@ -98,7 +98,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapBlogRoutes()
     {
         Route::prefix('bai-viet')
-        ->middleware(['web'])
+        ->middleware(['web','setLocale'])
         ->namespace($this->namespaceBlog)
         ->group(base_path('platform/frontend/blog/src/routes.php'));
     }

@@ -29,9 +29,9 @@
             <div class="row">
                 <div class="swichermainleft border-bottom  text-center">
                     <div class="p-3">
-                        <a href="https://www.spruko.com/demo/valex/" class="btn btn-primary btn-block mt-0">View
+                        <a href="/" class="btn btn-primary btn-block mt-0">View
                             Demo</a>
-                        <a href="index.html#" class="btn btn-secondary btn-block">Buy Now</a>
+                        <a href="/" class="btn btn-secondary btn-block">Buy Now</a>
                         <a href="https://themeforest.net/user/sprukosoft/portfolio" class="btn btn-success btn-block">Our
                             Portfolio</a>
                     </div>
@@ -172,45 +172,24 @@
                             <a href="/" class="d-flex  nav-item nav-link pr-0 country-flag1"
                                data-toggle="dropdown" aria-expanded="false">
                                 <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
-                                        src="{{ asset('images/admin/') }}/flags/us_flag.jpg" alt="img"></span>
+                                        src="{{ asset('images/') }}/{{ __('adm_header.logo') }}" alt="img"></span>
                                 <div class="my-auto">
-                                    <strong class="mr-2 ml-2 my-auto">English</strong>
+                                    <strong class="mr-2 ml-2 my-auto">{{ __('adm_header.text_language') }}</strong>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
-                                <a href="index.html#" class="dropdown-item d-flex ">
+                                <a href="{{ route('get.language','en') }}" class="dropdown-item d-flex ">
                                     <span class="avatar  mr-3 align-self-center bg-transparent"><img
-                                            src="{{ asset('images/admin') }}/flags/french_flag.jpg" alt="img"></span>
+                                            src="{{ asset('images/en.svg') }}" alt="img"></span>
                                     <div class="d-flex">
-                                        <span class="mt-2">French</span>
+                                        <span class="mt-2">English</span>
                                     </div>
                                 </a>
-                                <a href="index.html#" class="dropdown-item d-flex">
+                                <a href="{{ route('get.language','vi') }}" class="dropdown-item d-flex ">
                                     <span class="avatar  mr-3 align-self-center bg-transparent"><img
-                                            src="{{ asset('images/admin') }}/flags/germany_flag.jpg" alt="img"></span>
+                                            src="{{ asset('images/vi.svg') }}" alt="img"></span>
                                     <div class="d-flex">
-                                        <span class="mt-2">Germany</span>
-                                    </div>
-                                </a>
-                                <a href="index.html#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center bg-transparent"><img
-                                            src="{{ asset('images/admin') }}/flags/italy_flag.jpg" alt="img"></span>
-                                    <div class="d-flex">
-                                        <span class="mt-2">Italy</span>
-                                    </div>
-                                </a>
-                                <a href="index.html#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center bg-transparent"><img
-                                            src="{{ asset('images/admin') }}/flags/russia_flag.jpg" alt="img"></span>
-                                    <div class="d-flex">
-                                        <span class="mt-2">Russia</span>
-                                    </div>
-                                </a>
-                                <a href="index.html#" class="dropdown-item d-flex">
-                                    <span class="avatar  mr-3 align-self-center bg-transparent"><img
-                                            src="{{ asset('images/admin') }}/flags/spain_flag.jpg" alt="img"></span>
-                                    <div class="d-flex">
-                                        <span class="mt-2">spain</span>
+                                        <span class="mt-2">Vietnam</span>
                                     </div>
                                 </a>
                             </div>
@@ -223,19 +202,19 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search">
                                 <span class="input-group-btn">
-                                            <button type="reset" class="btn btn-default">
-                                            <i class="fas fa-times"></i>
-                                            </button>
-                                            <button type="submit" class="btn btn-default nav-link resp-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs"
-                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                     class="feather feather-search">
-                                                    <circle cx="11" cy="11" r="8"></circle>
-                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                                </svg>
-                                            </button>
-                                        </span>
+                                    <button type="reset" class="btn btn-default">
+                                    <i class="fas fa-times"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-default nav-link resp-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-search">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </button>
+                                </span>
                             </div>
                         </form>
                     </div>
@@ -1236,6 +1215,7 @@
 
 <script>
     var URL_GLOBAL_UPLOAD_IMAGES = '{{ route('cms_post_ajax.upload_images') }}'
+    var DOMAIN = '{{ config('app.url') }}'
 </script>
 <script src="{{ asset('admin/js/global.js') }}"></script>
 @yield('script')

@@ -9,6 +9,8 @@ use App\Models\Marketing\SendEmailUser;
 use App\Models\Marketing\TemplateEmail;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CmsTemplateEmailSendUserController extends CmsAdminController
 {
@@ -60,6 +62,24 @@ class CmsTemplateEmailSendUserController extends CmsAdminController
                 ]);
             }
         }
+    }
 
+    public function getListUserByIdSendEmail(Request $request,$id)
+    {
+        $guests = Guest::whereHas('sendEmail', function($query) use ($id){
+            $query->where('eu_send_email_id', $id);
+        })->get();
+        if ($request->ajax()) {
+            $guests = Guest::whereHas('sendEmail', function($query) use ($id){
+                $query->where('eu_send_email_id', $id);
+            })->get();
+
+            $viewHtml = view('admin::pages.marketing.send_email.include._inc_list_guest',[
+                'guests' => $guests ?? []
+            ])->render();
+            return response()->json([
+                'html' => $viewHtml
+            ]);
+        }
     }
 }

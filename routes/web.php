@@ -22,6 +22,10 @@ Route::group(['prefix' => 'authentication','namespace' => 'AuthAdmin'], function
 
 Route::get('/','HomeController@index')->name('get.home');
 
+Route::group(['prefix' => 'locale','namespace' => 'Language'], function(){
+    Route::get('{language}','LanguageController@renderLanguage')->name('get.language');
+});
+
 Route::group(['prefix' => 'ajax','namespace' => 'Ajax'], function(){
     Route::post('save-email','AjaxSaveEmailController@saveEmail')
         ->name('ajax_post.email');

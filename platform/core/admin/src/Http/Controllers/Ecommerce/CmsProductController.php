@@ -44,7 +44,7 @@ class CmsProductController extends CmsAdminController
 
     public function store(Request $request)
     {
-        $data               = $request->except('_token', 'pav_attribute_id', 'pav_value_id');
+        $data               = $request->except('_token', 'pav_attribute_id', 'pav_value_id','avatar');
         $data['created_at'] = Carbon::now();
         $id                 = Product::insertGetId($data);
         if ($id) {
@@ -101,7 +101,7 @@ class CmsProductController extends CmsAdminController
 
     public function update(Request $request, $id)
     {
-        $data               = $request->except('_token', 'pav_attribute_id', 'pav_value_id');
+        $data               = $request->except('_token', 'pav_attribute_id', 'pav_value_id','avatar');
         $data['updated_at'] = Carbon::now();
         Product::findOrFail($id)->update($data);
         RenderUrlSeoEcommerceServices::renderUrlEcommerce($request->pro_slug, SeoEcommerce::TYPE_PRODUCT, $id);

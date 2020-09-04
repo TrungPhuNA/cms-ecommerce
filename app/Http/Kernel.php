@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'permission' => \App\Http\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
         'check_admin_login' => \App\Http\Middleware\CheckLoginAdmin::class,
+        'setLocale' => \App\Http\Middleware\SetLocaleMiddleware::class,
     ];
 }

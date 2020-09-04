@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-lg-8 col-md-12">
@@ -126,6 +126,17 @@
                                     Pending
                                 </option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label  class="required">Avatar</label>
+                        <div class="form-group">
+                            <input type="file" class="my-pond" name="avatar">
+                            <input type="hidden" value="{{ old('c_avatar',$category->c_avatar ?? '') }}" id="avatar_uploads" name="c_avatar" >
                         </div>
                     </div>
                 </div>

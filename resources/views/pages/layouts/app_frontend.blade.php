@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -11,6 +11,7 @@
         @yield('style')
     </head>
     <body>
+        @include('pages.components._inc_header_top')
         @include('pages.components._inc_header')
         @include('pages.components._inc_menu')
         <div id="main">

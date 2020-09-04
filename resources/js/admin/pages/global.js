@@ -27,6 +27,7 @@ import './../../../library/admin/js/advanced-form-elements.js'
 // import './../../../library/admin/js/chart.flot.sampledata.js'
 // import './../../../library/admin/js/apexcharts.js'
 import './../../../library/admin/plugins/jqvmap/jquery.vmap.min.js'
+import './../../../library/admin/js/modal'
 import './../../../library/admin/js/modal-popup.js'
 import './../../../library/admin/js/index.js'
 import './../../../library/admin/js/jquery.vmap.sampledata.js'
@@ -44,6 +45,7 @@ import Attribute from "../components/attribute";
 import ScrollTop from "../components/scrollTop";
 import Tags from "../components/tags";
 import InitFilepond from "../components/init_filepond";
+import TemplateEmail from "../components/template_email";
 $(function () {
     Charcounter.init()
     Seo.init()
@@ -54,6 +56,7 @@ $(function () {
     ScrollTop.init()
     Tags.init()
     InitFilepond.init()
+    TemplateEmail.init()
     $('#datetimepicker').datetimepicker({
         format: 'yyyy-mm-dd hh:ii',
         autoclose: true

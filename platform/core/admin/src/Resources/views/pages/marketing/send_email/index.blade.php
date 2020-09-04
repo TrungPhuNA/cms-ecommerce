@@ -45,7 +45,8 @@
                                             <td>{{ $item->seu_title }}</td>
                                             <td>{{ $item->author->name ?? "[N\A]" }}</td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-success">Send {{ $item->seu_total_user }} guest</a>
+                                                <a href="{{ route('cms_ajax_get.users_send_email', $item->id) }}"
+                                                   class="btn btn-sm btn-success js-show-list-user">Send {{ $item->seu_total_user }} guest</a>
                                             </td>
                                             <td>{{ $item->seu_time_start }}</td>
                                             <td>{{ $item->created_at }}</td>
@@ -64,4 +65,25 @@
             </div>
         </div>
     </div>
+    <div id="modal-demo" class="modal">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">Chi tiết thông tin</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="js-modal-content">
+
+                </div>
+                <div class="modal-footer">
+{{--                    <button type="button" class="btn btn-primary">Save changes</button>--}}
+                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
 @stop
