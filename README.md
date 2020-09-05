@@ -7,3 +7,7 @@
     3. composer install && npm install && npm run prod
     4. php artisan serve 
 ## ECOMMERCE
+
+
+   Your key file has been saved at:
+   

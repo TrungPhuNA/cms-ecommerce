@@ -17,6 +17,7 @@
                     <span class="fa fa-clock date">{{ $articleDetail->created_at->format('H:s d/m/y') }}</span>
                 </div>
                 <div class="article_content">{!! $articleDetail->a_content !!}</div>
+                @include('blog::article.include._inc_tags',['articleDetail' => $articleDetail])
                 @include('pages.components._inc_articles')
             </div>
             <div class="box-30 box-right-banner" style="margin-left: 10px;">

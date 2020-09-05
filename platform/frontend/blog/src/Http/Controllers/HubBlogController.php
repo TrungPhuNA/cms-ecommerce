@@ -27,9 +27,12 @@ class HubBlogController extends BaseBlogController
             case SeoBlog::TYPE_MENU:
                 return (new BlogMenuController())->index($request, $idAction);
                 break;
+
+            case SeoBlog::TYPE_TAG:
+                return (new BlogTagController())->index($request, $idAction);
+                break;
         }
     }
-
 
     protected function deletePrefix($type)
     {
