@@ -1,0 +1,46 @@
+.footer {
+    background: white;
+    &_top {
+        &-nav {
+            padding: 10px;
+            li {
+                a {
+                    font-size: 15px;
+                    color: #222;
+                }
+            }
+        }
+        border-bottom: 1px solid #dedede;
+    }
+
+    &_bottom {
+        margin-top: 20px;
+        .social {
+            display: inline-block;
+            a {
+                width: 35px;
+                height: 35px;
+                border: 1px solid #DEDEDE;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                i {
+                    line-height: 35px;
+                }
+                &:hover {
+                    i {
+                        color: white;
+                    }
+                    &:first-child {
+                        background: #0b60e8;
+                        border: 1px solid #0b60e8;
+                    }
+                    &:last-child{
+                        background: #d9534f;
+                        border: 1px solid #d9534f;
+                    }
+                }
+            }
+        }
+    }
+}

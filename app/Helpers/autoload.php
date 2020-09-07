@@ -27,3 +27,17 @@ if (!function_exists('get_client_ip')) {
     }
 }
 
+
+if (!function_exists('render_text_language'))
+{
+    function render_text_language()
+    {
+        if (\App::isLocale('vi')) {
+            return 'Vietnam';
+        }elseif(\App::isLocale('en')) {
+            return 'English';
+        }
+
+        return  "Vietnam";
+    }
+}

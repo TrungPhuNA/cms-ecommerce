@@ -1,0 +1,23 @@
+/* Title */
+
+.title{
+    background: #FFF7F7F7;
+    margin-bottom: 2rem;
+    h1{
+        margin: 0;
+        padding: 1.2rem 0;
+        font-weight: 300;
+    }
+}
+
+//@media #{$small-only} {
+//    .title{
+//        margin-bottom: 0rem;
+//    }
+//}
+
+div.box-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}

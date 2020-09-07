@@ -35,10 +35,10 @@ import './../../../library/admin/js/sticky.js'
 import './../../../library/admin/js/custom.js'
 import './../../../library/admin/plugins/side-menu/sidemenu.js'
 import './../../../library/admin/switcher/js/switcher.js'
-import './../components/run_notifi'
+import '../../components/run_notifi'
 import Charcounter from './../components/count_char'
 import Seo from "../components/seo";
-import RunMessages from "../components/run_messages";
+import RunMessages from "../../components/run_messages";
 import ConfirmDelete from "../components/confirm_delete";
 import Check from "../components/check";
 import Attribute from "../components/attribute";

@@ -1,4 +1,4 @@
-import {notify} from "../components/run_notifi";
+import {notify} from "../../components/run_notifi";
 
 var Profile = {
     init: function () {

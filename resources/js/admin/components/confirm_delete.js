@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import {notify} from "./run_notifi";
+import {notify} from "../../components/run_notifi";
 var ConfirmDelete = {
     init : function () {
         this.callbackDelete()

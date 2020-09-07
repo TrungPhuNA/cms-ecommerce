@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46f76330a02979ab4e535ef74d74599c",
+    "content-hash": "afa6a5d9210b025e2f4f415271819ddc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -172,6 +172,73 @@
                 "math"
             ],
             "time": "2020-08-18T09:40:56+00:00"
+        },
+        {
+            "name": "bumbummen99/shoppingcart",
+            "version": "2.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bumbummen99/LaravelShoppingcart.git",
+                "reference": "08618b40f5003d3ed792cd746c8cc5bf1dec8f99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bumbummen99/LaravelShoppingcart/zipball/08618b40f5003d3ed792cd746c8cc5bf1dec8f99",
+                "reference": "08618b40f5003d3ed792cd746c8cc5bf1dec8f99",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0",
+                "illuminate/session": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0",
+                "illuminate/support": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0",
+                "nesbot/carbon": "~1.20||^1.26.3||^2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.4",
+                "phpunit/phpunit": "~5.0||~6.0||~7.0||~8.0"
+            },
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl",
+                    "homepage": "http://robgloudemans.nl/"
+                },
+                {
+                    "name": "Patrick Henninger",
+                    "email": "privat@skyraptor.eu",
+                    "homepage": "https://skyraptor.eu/"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "time": "2020-05-08T19:20:56+00:00"
         },
         {
             "name": "core/admin",
@@ -568,6 +635,64 @@
                 }
             ],
             "description": "Core Product Frontend"
+        },
+        {
+            "name": "frontend/purchase",
+            "version": "dev",
+            "dist": {
+                "type": "path",
+                "url": "./platform/frontend/purchase",
+                "reference": "7fbb88de2dd127c87fa28de50aa3144709ce7e2d"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Frontend\\Purchase\\PurchaseServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Frontend\\Purchase\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "TrungPhuNA",
+                    "email": "phupt.humg.94@gmail.com"
+                }
+            ],
+            "description": "Core purchase Frontend"
+        },
+        {
+            "name": "frontend/user",
+            "version": "dev",
+            "dist": {
+                "type": "path",
+                "url": "./platform/frontend/user",
+                "reference": "f9f1cb72776e20ab0651b097011f4e50d1ac9eff"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Frontend\\User\\UserServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Frontend\\User\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "TrungPhuNA",
+                    "email": "phupt.humg.94@gmail.com"
+                }
+            ],
+            "description": "Core User Frontend"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -6459,7 +6584,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "core/admin": 20,
-        "frontend/product": 20
+        "frontend/product": 20,
+        "frontend/purchase": 20,
+        "frontend/user": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

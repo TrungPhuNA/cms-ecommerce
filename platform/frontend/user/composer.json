@@ -1,0 +1,27 @@
+{
+    "name": "frontend/user",
+    "description": "Core User Frontend",
+    "type": "package",
+    "version": "dev",
+    "autoload": {
+        "psr-4": {
+            "Frontend\\User\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrungPhuNA",
+            "email": "phupt.humg.94@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Frontend\\User\\UserServiceProvider"
+            ]
+        }
+    }
+}

@@ -18,6 +18,7 @@
             @yield('content')
         </div>
         @include('pages.components._inc_box_email')
+        @include('pages.components._inc_footer')
         <script>
             var URL_AJAX_EMAIL = '{{ route('ajax_post.email') }}'
         </script>

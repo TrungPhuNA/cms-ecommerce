@@ -32,6 +32,10 @@ let build_js = [
         from: 'resources/js/frontend/pages/menu/index.js',
         to: 'js/menu.js'
     },
+    {
+        from: 'resources/js/user/pages/dashboard.js',
+        to: 'js/user_dashboard.js'
+    },
 ];
 
 let build_scss = [
@@ -46,6 +50,10 @@ let build_scss = [
     {
         from: 'resources/sass/frontend/pages/article_detail/index.scss',
         to: 'css/article_detail.css'
+    },
+    {
+        from: 'resources/sass/user/pages/dashboard.scss',
+        to: 'css/user_dashboard.css'
     },
 ];
 

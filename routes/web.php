@@ -20,6 +20,16 @@ Route::group(['prefix' => 'authentication','namespace' => 'AuthAdmin'], function
     Route::get('logout','AdminLoginController@getLogoutAdmin')->name('cms_get.logout');
 });
 
+Route::group(['prefix' => 'tai-khoan','namespace' => 'Auth'], function() {
+    Route::get('dang-ky','RegisterController@getRegister')->name('get.register');
+    Route::post('dang-ky','RegisterController@postRegister');
+
+    Route::get('dang-nhap','LoginController@getLogin')->name('get.login');
+    Route::post('dang-nhap','LoginController@postLogin');
+
+    Route::get('logout','AdminLoginController@getLogoutAdmin')->name('get.logout');
+});
+
 Route::get('/','HomeController@index')->name('get.home');
 
 Route::group(['prefix' => 'locale','namespace' => 'Language'], function(){

@@ -75,6 +75,7 @@
                     <li><a class="slide-item" href="{{ route('cms_get.information.index') }}">{{ trans('adm_sidebar.system.information') }}</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.page_static.index') }}">{{ trans('adm_sidebar.system.page') }}</a></li>
                     <li><a class="slide-item" href="{{ route('cms_get.email.index') }}">{{ trans('adm_sidebar.system.setting_email') }}</a></li>
+                    <li><a class="slide-item" href="{{ route('cms_get.text_link.index') }}">{{ trans('adm_sidebar.system.text_link') }}</a></li>
                 </ul>
             </li>
         </ul>

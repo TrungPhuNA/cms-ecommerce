@@ -18,6 +18,8 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespaceAdmin = 'Core\Admin\Http\Controllers';
     protected $namespaceProduct = 'Frontend\Product\Http\Controllers';
     protected $namespaceBlog = 'Frontend\Blog\Http\Controllers';
+    protected $namespaceUser = 'Frontend\User\Http\Controllers';
+    protected $namespacePurchase = 'Frontend\Purchase\Http\Controllers';
 
     /**
      * The path to the "home" route for your application.
@@ -48,6 +50,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapAdminRoutes();
         $this->mapProductRoutes();
         $this->mapBlogRoutes();
+        $this->mapUserRoutes();
+        $this->mapPurchaseRoutes();
     }
 
     /**
@@ -93,6 +97,22 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware(['web','setLocale'])
             ->namespace($this->namespaceProduct)
             ->group(base_path('platform/frontend/product/src/routes.php'));
+    }
+
+    protected function mapPurchaseRoutes()
+    {
+        Route::prefix('purchase')
+            ->middleware(['web','setLocale'])
+            ->namespace($this->namespacePurchase)
+            ->group(base_path('platform/frontend/purchase/src/routes.php'));
+    }
+
+    protected function mapUserRoutes()
+    {
+        Route::prefix('account')
+            ->middleware(['web','setLocale','check_user_login'])
+            ->namespace($this->namespaceUser)
+            ->group(base_path('platform/frontend/user/src/routes.php'));
     }
 
     protected function mapBlogRoutes()

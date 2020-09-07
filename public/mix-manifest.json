@@ -1,13 +1,16 @@
 {
-    "/admin/js/global.js": "/admin/js/global.js?id=14827e6284e90950c3e7",
-    "/admin/js/profile.js": "/admin/js/profile.js?id=2372ad74b0f302efbf1a",
+    "/admin/js/global.js": "/admin/js/global.js?id=b6ddb20ce2b840a3ee05",
+    "/admin/js/profile.js": "/admin/js/profile.js?id=37f35cfe3b0a5bb2f902",
     "/admin/css/global.css": "/admin/css/global.css?id=52126187b65ade15b3ca",
-    "/css/home.css": "/css/home.css?id=96dbaca648ed57b05e03",
-    "/css/menu.css": "/css/menu.css?id=e7399e99b1c9f2bb2b52",
-    "/css/article_detail.css": "/css/article_detail.css?id=1a231621b0ee9fb15e22",
+    "/css/home.css": "/css/home.css?id=f4dac495b3070341b78b",
+    "/css/menu.css": "/css/menu.css?id=d2ad00b21e19f12022ee",
+    "/css/article_detail.css": "/css/article_detail.css?id=fc2f9083f58690b9a2af",
+    "/css/user_dashboard.css": "/css/user_dashboard.css?id=05eb29fa65258e137f1a",
     "/js/home.js": "/js/home.js?id=2f9d721272667cc0e5c4",
     "/js/menu.js": "/js/menu.js?id=aaea120370299b69cd6b",
-    "/css/home.min.css": "/css/home.min.css?id=96dbaca648ed57b05e03",
-    "/css/menu.min.css": "/css/menu.min.css?id=e7399e99b1c9f2bb2b52",
-    "/css/article_detail.min.css": "/css/article_detail.min.css?id=1a231621b0ee9fb15e22"
+    "/js/user_dashboard.js": "/js/user_dashboard.js?id=47029a4540bc8637409f",
+    "/css/home.min.css": "/css/home.min.css?id=f4dac495b3070341b78b",
+    "/css/menu.min.css": "/css/menu.min.css?id=d2ad00b21e19f12022ee",
+    "/css/article_detail.min.css": "/css/article_detail.min.css?id=fc2f9083f58690b9a2af",
+    "/css/user_dashboard.min.css": "/css/user_dashboard.min.css?id=05eb29fa65258e137f1a"
 }

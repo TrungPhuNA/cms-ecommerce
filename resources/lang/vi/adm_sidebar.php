@@ -27,6 +27,7 @@ return [
     'system'         => [
         'information'   => 'Thông tin website',
         'page'          => 'Trang tĩnh',
-        'setting_email' => 'Cấu hình Email'
+        'setting_email' => 'Cấu hình Email',
+        'text_link'     => 'Text link',
     ]
 ];

@@ -27,6 +27,7 @@ return [
     'system'         => [
         'information'   => 'Information',
         'page'          => 'Page',
-        'setting_email' => 'Setting Email'
+        'setting_email' => 'Setting Email',
+        'text_link'     => 'Text link',
     ]
 ];
