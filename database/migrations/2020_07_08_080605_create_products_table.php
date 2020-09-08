@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('pro_name')->nullable();
             $table->string('pro_slug')->index()->unique();
             $table->integer('pro_price')->default(0);
+            $table->integer('pro_price_import')->default(0);
+            $table->integer('pro_number')->default(0);
             $table->integer('pro_category_id')->default(0);
             $table->integer('pro_admin_id')->default(0);
             $table->tinyInteger('pro_sale')->default(0);

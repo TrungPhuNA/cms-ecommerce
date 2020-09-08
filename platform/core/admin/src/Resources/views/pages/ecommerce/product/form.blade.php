@@ -47,6 +47,25 @@
             </div>
             <div class="card">
                 <div class="card-body">
+                    <div class="main-content-label mg-b-5">Số lượng / Giá</div>
+                    <div class="row">
+                        <div class="form-group col-sm-3">
+                            <label  class="required" data-max="300">Số lượng</label>
+                            <input type="number" name="pro_number" placeholder="0" class="form-control" value="{{ old('pro_number',$product->pro_number ?? 0) }}">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label  class="required" data-max="300">Giá nhập</label>
+                            <input type="number" name="pro_price_import" placeholder="0" class="form-control" value="{{ old('pro_price_import',$product->pro_price_import ?? 0) }}">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label  class="required" data-max="300">Giá bán</label>
+                            <input type="number" name="pro_price" placeholder="0" class="form-control" value="{{ old('pro_price',$product->pro_price ?? 0) }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
                     <div class="main-content-label mg-b-5">
                         Content
                     </div>
