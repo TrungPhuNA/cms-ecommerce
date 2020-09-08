@@ -48,7 +48,7 @@ class CmsProductController extends CmsAdminController
         $data['created_at'] = Carbon::now();
         $id                 = Product::insertGetId($data);
         if ($id) {
-            $this->syncAttributeValue($id, $request);
+//            $this->syncAttributeValue($id, $request);
             RenderUrlSeoEcommerceServices::renderUrlEcommerce($request->pro_slug, SeoEcommerce::TYPE_PRODUCT, $id);
         }
         $this->showSuccessMessages();
