@@ -36,6 +36,10 @@ let build_js = [
         from: 'resources/js/user/pages/dashboard.js',
         to: 'js/user_dashboard.js'
     },
+    {
+        from: 'resources/js/user/pages/bank.js',
+        to: 'js/user_bank.js'
+    },
 ];
 
 let build_scss = [
@@ -54,6 +58,10 @@ let build_scss = [
     {
         from: 'resources/sass/user/pages/dashboard.scss',
         to: 'css/user_dashboard.css'
+    },
+    {
+        from: 'resources/sass/user/pages/bank.scss',
+        to: 'css/user_bank.css'
     },
 ];
 

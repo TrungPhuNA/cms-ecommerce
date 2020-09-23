@@ -29,5 +29,6 @@ return [
         'page'          => 'Page',
         'setting_email' => 'Setting Email',
         'text_link'     => 'Text link',
+        'bank'          => 'List bank'
     ]
 ];

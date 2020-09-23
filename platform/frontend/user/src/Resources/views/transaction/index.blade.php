@@ -6,20 +6,7 @@
     <div class="container">
         <div class="box">
             <div class="box-20 pt20 mr20">
-                <div class="box-info-item text-align-center">
-                    <div class="box-avatar">
-                        <div class="circle">
-                            <img class="profile-pic" src="{{ asset('/images/default.jpg') }}">
-                            <div class="p-image">
-                                <i class="fa fa-camera upload-button"></i>
-                                <input class="file-upload" type="file" accept="image/*"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info-auth">
-                        <p>Xin Chào <b>TrungPhuNA</b></p>
-                    </div>
-                </div>
+                @include('user::components._inc_avatar')
             </div>
             <div class="box-80 pt20">
                 <section>

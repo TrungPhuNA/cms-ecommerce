@@ -6,6 +6,8 @@
     2. Tạo fake tài khoản admin
     3. composer install && npm install && npm run prod
     4. php artisan serve 
+    
+    php -d memory_limit=-1 /usr/local/bin/composer  require frontend/blog @dev   
 ## ECOMMERCE       
    Your key file has been saved at:
    

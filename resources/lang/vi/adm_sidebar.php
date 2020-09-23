@@ -29,5 +29,6 @@ return [
         'page'          => 'Trang tĩnh',
         'setting_email' => 'Cấu hình Email',
         'text_link'     => 'Text link',
+        'bank'     => 'Ngân hàng',
     ]
 ];

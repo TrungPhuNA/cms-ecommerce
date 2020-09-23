@@ -24,7 +24,7 @@
             <div class="box-80 pt20">
                 <section>
                     <div class="box-title">{{ __('user.update_info.title_update_info') }}</div>
-                    <form action="{{ route('post.update_info') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('post.update_info') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label for="">{{ __('user.update_info.form.label.name') }}</label>

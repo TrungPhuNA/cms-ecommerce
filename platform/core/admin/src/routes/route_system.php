@@ -27,4 +27,13 @@ Route::group(['prefix' => 'system', 'namespace' => 'System'], function () {
         Route::post('update/{id}', 'CmsTextLinkController@update');
         Route::get('delete/{id}', 'CmsTextLinkController@delete')->name('cms_get.text_link.delete');
     });
+
+    Route::group(['prefix' => 'bank'], function () {
+        Route::get('', 'CmsBankController@index')->name('cms_get.bank.index');
+//        Route::get('create', 'CmsTextLinkController@create')->name('cms_get.text_link.create');
+//        Route::post('create', 'CmsTextLinkController@store');
+//        Route::get('update/{id}', 'CmsTextLinkController@edit')->name('cms_get.text_link.edit');
+//        Route::post('update/{id}', 'CmsTextLinkController@update');
+//        Route::get('delete/{id}', 'CmsTextLinkController@delete')->name('cms_get.text_link.delete');
+    });
 });
