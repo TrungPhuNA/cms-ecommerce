@@ -20,6 +20,7 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespaceBlog = 'Frontend\Blog\Http\Controllers';
     protected $namespaceUser = 'Frontend\User\Http\Controllers';
     protected $namespacePurchase = 'Frontend\Purchase\Http\Controllers';
+    protected $namespaceEstate = 'Frontend\Estate\Http\Controllers';
 
     /**
      * The path to the "home" route for your application.
@@ -52,6 +53,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapBlogRoutes();
         $this->mapUserRoutes();
         $this->mapPurchaseRoutes();
+        $this->mapWebEstate();
     }
 
     /**
@@ -66,6 +68,14 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web','setLocale'])
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    protected function mapWebEstate()
+    {
+        Route::prefix('estate')
+            ->middleware(['web','setLocale','check_user_login'])
+            ->namespace($this->namespaceEstate)
+            ->group(base_path('platform/frontend/estate/src/routes.php'));
     }
 
     /**

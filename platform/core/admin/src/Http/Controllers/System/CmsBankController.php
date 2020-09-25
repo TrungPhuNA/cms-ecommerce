@@ -20,25 +20,8 @@ class CmsBankController extends CmsAdminController
         $viewData = [
             'banks' => $banks
         ];
+
         return view('admin::pages.system.bank.index', $viewData);
-    }
-
-    public function create()
-    {
-        return view('admin::pages.system.static.create');
-    }
-
-    public function store(AdminPageStaticRequest $request)
-    {
-        $data               = $request->except('_token');
-        $data['ps_link']    = $this->getLink($request->ps_link);
-        $data['ps_md5']     = md5(Str::slug($data['ps_link']));
-        $data['created_at'] = Carbon::now();
-
-        $id = PageStatic::insertGetId($data);
-        if ($id) $this->showSuccessMessages();
-
-        return redirect()->back();
     }
 
     public function edit($id)

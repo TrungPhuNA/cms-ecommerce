@@ -1,0 +1,27 @@
+{
+    "name": "frontend/estate",
+    "description": "Core Estate Frontend",
+    "type": "package",
+    "version": "dev",
+    "autoload": {
+        "psr-4": {
+            "Frontend\\Estate\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrungPhuNA",
+            "email": "phupt.humg.94@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Frontend\\Estate\\EstateServiceProvider"
+            ]
+        }
+    }
+}

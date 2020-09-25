@@ -10,45 +10,35 @@
             </div>
             <div class="box-80 pt20">
                 <section>
-                    <div class="box-title">{{ __('user.payment_card.title') }}</div>
-                    <form action="{{ route('post.update_info') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
-                        @csrf
-                        <div class="form-group">
-                            <label for="">{{ __('user.payment_card.form.label.bank') }} <span>(*)</span></label>
-                            <select name="" id="" class="form-control js-select2-bank">
-                                <option value="">
-                                    @foreach($banks as $bank)
-                                        <option value="{{ $bank->id }}">{{ $bank->b_name }}</option>
-                                    @endforeach
-                                </option>
-                            </select>
-                            @if ($errors->first('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">{{ __('user.payment_card.form.label.branch') }} <span>(*)</span></label>
-                            <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="">
-                            @if ($errors->first('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">{{ __('user.payment_card.form.label.account_holder') }} <span>(*)</span></label>
-                            <input type="number" name="phone" class="form-control" value="{{ Auth::user()->phone }}" placeholder="">
-                            @if ($errors->first('phone'))
-                                <span class="text-danger">{{ $errors->first('phone') }}</span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">{{ __('user.payment_card.form.label.stk') }} <span>(*)</span></label>
-                            <input type="number" name="phone" class="form-control" value="{{ Auth::user()->phone }}" placeholder="">
-                            @if ($errors->first('phone'))
-                                <span class="text-danger">{{ $errors->first('phone') }}</span>
-                            @endif
-                        </div>
-                        <button type="submit" class="btn btn-blue btn-md">Cập nhật</button>
-                    </form>
+                    <div class="box-title">{{ __('user.payment_card.title') }} <a href="{{ route('get.payment_card.create') }}">Thêm mới</a></div>
+                    <div class="lists">
+                        @forelse($cardsUser as $item)
+                            <div class="item item-3">
+                                <div class="item-logo">
+                                    <a href="">
+                                        <img src="{{ asset('images/card/acb.jpg') }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="item-name-card"><b>{{ $item->bank->b_name ?? "[N\A]" }}</b></div>
+                                <div class="item-number">
+                                    Số tài khoản: <b>{{ $item->cu_account_number }}</b>
+                                </div>
+                                <div class="item-account">
+                                    Tên tài khoản: <b>{{ $item->cu_account_holder }}</b>
+                                </div>
+                                <div class="item-branch">
+                                    Chi nhánh: <b>{{ $item->cu_branch }}</b>
+                                </div>
+                                <div class="item-action mt20 pt10">
+                                    <a href="{{ route('get.payment_card.delete', $item->id) }}" class="btn btn-xs btn-radius btn-secondary"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="{{ route('get.payment_card.update', $item->id) }}" class="btn btn-xs btn-radius btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+                                    <a href="{{ route('get.payment_card.active_main', $item->id) }}" class="btn btn-xs btn-radius btn-success"><i class="fa fa-eye"></i> Set Default</a>
+                                </div>
+                            </div>
+                        @empty
+                            <p>Dữ liệu chưa được cập nhật</p>
+                        @endforelse
+                    </div>
                 </section>
             </div>
         </div>

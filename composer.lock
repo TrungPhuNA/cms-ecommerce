@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf24ee48a3b1486345100c342f412183",
+    "content-hash": "196b8399c5436daf9ed2943cbbfe3602",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -679,6 +679,38 @@
                 }
             ],
             "description": "Core Blog Frontend",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "frontend/estate",
+            "version": "dev",
+            "dist": {
+                "type": "path",
+                "url": "./platform/frontend/estate",
+                "reference": "ce7773234cec9840c53604a9c98b37f5f216c8b4"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Frontend\\Estate\\EstateServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Frontend\\Estate\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "TrungPhuNA",
+                    "email": "phupt.humg.94@gmail.com"
+                }
+            ],
+            "description": "Core Estate Frontend",
             "transport-options": {
                 "relative": true
             }
@@ -7223,6 +7255,7 @@
     "stability-flags": {
         "core/admin": 20,
         "frontend/blog": 20,
+        "frontend/estate": 20,
         "frontend/product": 20,
         "frontend/purchase": 20,
         "frontend/user": 20

@@ -14,6 +14,7 @@
         "core/admin": "@dev",
         "fideloper/proxy": "^4.2",
         "frontend/blog": "@dev",
+        "frontend/estate": "@dev",
         "frontend/product": "@dev",
         "frontend/purchase": "@dev",
         "frontend/user": "@dev",

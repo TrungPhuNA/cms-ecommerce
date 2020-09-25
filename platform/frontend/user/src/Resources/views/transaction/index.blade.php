@@ -10,7 +10,7 @@
             </div>
             <div class="box-80 pt20">
                 <section>
-                    <div class="box-title">{{ __('user.transaction.title') }}</div>
+                    <div class="box-title">{{ __('user.transaction.title') }} </div>
                     <form action="{{ route('post.update_info') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
