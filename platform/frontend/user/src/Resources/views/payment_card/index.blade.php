@@ -5,15 +5,15 @@
 @section('content')
     <div class="container">
         <div class="box">
-            <div class="box-20 pt20 mr20">
-                @include('user::components._inc_avatar')
-            </div>
-            <div class="box-80 pt20">
+            <div class="box-100 pt20">
                 <section>
                     <div class="box-title">{{ __('user.payment_card.title') }} <a href="{{ route('get.payment_card.create') }}">Thêm mới</a></div>
                     <div class="lists">
                         @forelse($cardsUser as $item)
                             <div class="item item-3">
+                                @if ($item->cu_main == 1)
+                                    <span class="fa fa-check-circle-o item-check"></span>
+                                @endif
                                 <div class="item-logo">
                                     <a href="">
                                         <img src="{{ asset('images/card/acb.jpg') }}" alt="">

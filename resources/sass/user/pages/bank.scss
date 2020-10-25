@@ -5,6 +5,9 @@ body {
 @import "../components/inc_header";
 @import "../components/inc_avatar";
 @import "~toastr/toastr";
+@import "../../custome_plugin/jquery_modal";
+@import "../components/inc_sidebar_user";
+@import "~jquery-modal";
 @import "~sweetalert2/dist/sweetalert2.min.css";
 @import "~owl.carousel/dist/assets/owl.carousel.min.css";
 @import "../../../library/growl-notification/light-theme.min.css";
@@ -17,4 +20,11 @@ body {
     margin-bottom: 10px;
     background: #fff;
     border-radius: 5px;
+}
+
+.item-check{
+    position: absolute;
+    right: 10px;
+    color: #28a744;
+    font-size: 24px;
 }

@@ -9,6 +9,18 @@
         </div>
     </div>
     <div class="info-auth">
-        <p>Xin Chào <b>TrungPhuNA</b></p>
+        <p class="flex ">
+            <span class="w25 text-align-left">Hi</span>
+            <b class="w75 text-align-left">{{ get_data_user('web','name') }}</b>
+        </p>
+        <p class="flex">
+            <span class="w25 text-align-left">Email</span>
+            <b class="w75 text-align-left">{{ get_data_user('web','email') }}</b>
+        </p>
+        <p class="flex">
+            <span class="w25 text-align-left">Pass</span>
+            <b class="w25 text-align-left">*******</b>
+            <a style="padding: 0px;width: 60px;" class="w50 js-popup-password btn btn-xs btn-secondary btn-radius"><i class="fa fa-pencil"></i> Update</a>
+        </p>
     </div>
 </div>

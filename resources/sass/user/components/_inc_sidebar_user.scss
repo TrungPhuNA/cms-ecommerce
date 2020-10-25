@@ -1,0 +1,12 @@
+.box-info-item {
+    .info-auth {
+        p {
+            margin-bottom: 10px;
+            b {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}

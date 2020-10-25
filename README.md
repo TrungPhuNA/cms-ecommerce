@@ -11,3 +11,7 @@
 ## ECOMMERCE       
    Your key file has been saved at:
    
+   
+      Your key file has been saved at:
+      /etc/letsencrypt/live/education.phupt.net/privkey.pem
+   

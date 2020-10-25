@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 html,
 body,
 div,
@@ -134,6 +136,8 @@ table {
   padding: 15px;
   background: #fff;
   font-size: 14px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 2px 0 #c4c7cc;
 }
 
 .card--top:not(:first-child) {
@@ -154,16 +158,15 @@ table {
   color: #E91E63;
 }
 
+.card-header .title {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 .card-header p {
   color: #999999;
   font-size: 13px;
-}
-
-.card-header .card-title {
-  color: #E91E63;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
 .card-header .normal-title {
@@ -1673,50 +1676,6 @@ h1 {
   }
 }
 
-.class-very-account {
-  text-align: center;
-  padding: 10px;
-  background-color: #FFEB3B;
-  color: #333;
-  font-weight: bold;
-}
-
-.class-very-account a {
-  color: #2196F3;
-}
-
-@media (max-width: 767px) {
-  .class-very-account {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-  }
-
-  .main-title {
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .desktop {
-    display: none !important;
-  }
-
-  .mobile {
-    display: block;
-  }
-
-  .title-heading {
-    margin-left: 5px;
-  }
-
-  h1 {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
 .image img {
   max-width: 100%;
 }
@@ -1773,8 +1732,72 @@ h1 {
   width: 35%;
 }
 
+.box .box-100 {
+  width: 100%;
+}
+
+.w5 {
+  width: 5%;
+}
+
+.w10 {
+  width: 10%;
+}
+
+.w15 {
+  width: 15%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w100 {
+  width: 100%;
+}
+
 .text-align-center {
   text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
 }
 
 /* Title */
@@ -1798,6 +1821,7 @@ div.box-title {
 
 .lists .item {
   float: left;
+  position: relative;
   margin-right: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -1826,6 +1850,83 @@ div.box-title {
 
 .lists .item-6 {
   width: calc(100%/6 - 10px);
+}
+
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-shopping-bag:before {
+  content: "\F290";
+}
+
+.fa-credit-card:before {
+  content: "\F09D";
+}
+
+.fa-info-circle:before {
+  content: "\F05A";
+}
+
+.fa-trash:before {
+  content: "\F1F8";
+}
+
+.fa-pencil:before {
+  content: "\F040";
+}
+
+.fa-eye:before {
+  content: "\F06E";
+}
+
+.fa-check-circle-o:before {
+  content: "\F05D";
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
 .menu_top {

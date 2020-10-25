@@ -1,14 +1,17 @@
 @import './../../bases/common';
-body {
-    background: white;
-}
 @import "../components/inc_header";
 @import "../components/inc_avatar";
+@import "../components/inc_sidebar_user";
+@import "../../custome_plugin/jquery_modal";
 @import "~toastr/toastr";
+@import "~jquery-modal";
 @import "~sweetalert2/dist/sweetalert2.min.css";
 @import "~owl.carousel/dist/assets/owl.carousel.min.css";
 @import "../../../library/growl-notification/light-theme.min.css";
 @import '../../components/growl_notifications';
+body {
+    background: white;
+}
 .box-info-item {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     padding: 15px;

@@ -1,0 +1,25 @@
+.modal {
+    padding: 15px;
+    .header {
+        display: block;
+        text-transform: unset;
+        font-weight: bold;
+        color: #212121;
+        font-size: 22px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+    .content {
+        padding: 10px 0;
+        a {
+            color: #007bff;
+        }
+        ul {
+            li {
+                i {
+                    color: red;
+                }
+            }
+        }
+    }
+}

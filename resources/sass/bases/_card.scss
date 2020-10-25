@@ -2,6 +2,8 @@
     padding: 15px;
     background: #fff;
     font-size: 14px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 2px 0 #c4c7cc;
 
     &--top {
         &:not(:first-child) {
@@ -21,18 +23,23 @@
             font-weight: 600;
             color: #E91E63;
         }
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
 
         p {
             color: #999999;
             font-size: 13px;
         }
 
-        .card-title {
-            color: #E91E63;
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
+        //.card-title {
+        //    color: #E91E63;
+        //    font-size: 18px;
+        //    text-transform: uppercase;
+        //    font-weight: 600;
+        //}
 
         .normal-title {
             font-size: 14px;

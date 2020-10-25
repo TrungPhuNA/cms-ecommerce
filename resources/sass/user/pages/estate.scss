@@ -1,0 +1,16 @@
+@import './../../bases/common';
+body {
+    background: white;
+}
+@import "../components/inc_header";
+@import "../components/inc_avatar";
+@import "~toastr/toastr";
+@import "bootstrap";
+@import "~sweetalert2/dist/sweetalert2.min.css";
+@import "~owl.carousel/dist/assets/owl.carousel.min.css";
+@import "../../../library/growl-notification/light-theme.min.css";
+@import '../../components/growl_notifications';
+@import "./../../custome_plugin/custome_select2";
+@import "./../../custome_plugin/customer_summernote";
+@import "~summernote/dist/summernote.min.css";
+@import "~select2";

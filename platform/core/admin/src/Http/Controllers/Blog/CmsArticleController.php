@@ -2,8 +2,7 @@
 
 namespace Core\Admin\Http\Controllers\Blog;
 
-use App\Http\Requests\AdminArticleRequest;
-use App\Http\Requests\AdminMenuRequest;
+use App\Http\Requests\Admin\AdminArticleRequest;
 use App\Models\Blog\Article;
 use App\Models\Blog\Menu;
 use App\Models\Blog\SeoBlog;

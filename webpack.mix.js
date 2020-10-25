@@ -40,6 +40,10 @@ let build_js = [
         from: 'resources/js/user/pages/bank.js',
         to: 'js/user_bank.js'
     },
+    {
+        from: 'resources/js/user/pages/estate.js',
+        to: 'js/user_estate.js'
+    },
 ];
 
 let build_scss = [
@@ -62,6 +66,10 @@ let build_scss = [
     {
         from: 'resources/sass/user/pages/bank.scss',
         to: 'css/user_bank.css'
+    },
+    {
+        from: 'resources/sass/user/pages/estate.scss',
+        to: 'css/user_estate.css'
     },
 ];
 
@@ -100,9 +108,5 @@ mix.webpackConfig({
         }
     },
 });
-// mix.autoload({ 'jquery': ['window.$', 'window.jQuery'] })
-
-// mix.js('resources/js/app.js', 'public/js')
-//     .sass('resources/sass/app.scss', 'public/css');
 
 mix.version();

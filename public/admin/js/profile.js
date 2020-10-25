@@ -15499,10 +15499,21 @@ var alertSw2 = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.a.mixin({
 
 /***/ }),
 
+/***/ "./resources/sass/user/pages/estate.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/user/pages/estate.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/admin/pages/profile.js ./resources/sass/admin/pages/global.scss ./resources/sass/frontend/pages/home/index.scss ./resources/sass/frontend/pages/menu/index.scss ./resources/sass/frontend/pages/article_detail/index.scss ./resources/sass/user/pages/dashboard.scss ./resources/sass/user/pages/bank.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/admin/pages/profile.js ./resources/sass/admin/pages/global.scss ./resources/sass/frontend/pages/home/index.scss ./resources/sass/frontend/pages/menu/index.scss ./resources/sass/frontend/pages/article_detail/index.scss ./resources/sass/user/pages/dashboard.scss ./resources/sass/user/pages/bank.scss ./resources/sass/user/pages/estate.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15512,7 +15523,8 @@ __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/
 __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/frontend/pages/menu/index.scss */"./resources/sass/frontend/pages/menu/index.scss");
 __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/frontend/pages/article_detail/index.scss */"./resources/sass/frontend/pages/article_detail/index.scss");
 __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/user/pages/dashboard.scss */"./resources/sass/user/pages/dashboard.scss");
-module.exports = __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/user/pages/bank.scss */"./resources/sass/user/pages/bank.scss");
+__webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/user/pages/bank.scss */"./resources/sass/user/pages/bank.scss");
+module.exports = __webpack_require__(/*! /Users/trungphuna/Documents/work/web/duan/cms-ecommerce/resources/sass/user/pages/estate.scss */"./resources/sass/user/pages/estate.scss");
 
 
 /***/ })

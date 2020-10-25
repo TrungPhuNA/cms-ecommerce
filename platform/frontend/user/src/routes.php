@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 Route::get('','UserDashboardController@index')->name('get.dashboard');
 Route::post('update','UserUpdateInfoController@updateInfo')->name('post.update_info');
+Route::post('update/password','UserUpdateInfoController@updatePassword')->name('post.update_password');
 Route::get('transaction','UserTransactionController@index')->name('get.transaction');
 Route::group(['prefix' => 'payment'], function (){
     Route::get('','UserPaymentCardController@index')->name('get.payment_card');

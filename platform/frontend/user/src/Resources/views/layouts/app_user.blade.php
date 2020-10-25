@@ -7,7 +7,6 @@
     {!! isset($metaSeo) ? $metaSeo->renderMetaSeo() : '' !!}
     <title>Theme - TrungPhuNA</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield('style')
     @if(session('toastr'))
         <script>
@@ -18,6 +17,7 @@
 </head>
 <body>
     @include('user::components._inc_header')
+    @include('user::components._inc_popup_password')
     @yield('content')
     <div class="" style="clear: both"></div>
     @yield('script')

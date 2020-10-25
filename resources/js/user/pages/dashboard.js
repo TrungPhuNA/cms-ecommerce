@@ -1,5 +1,6 @@
 import RunMessages from "../../components/run_messages";
-
+import Password from "../components/password";
+import 'jquery-modal'
 var UserDashboard = {
     init : function () {
         RunMessages.init()
@@ -8,4 +9,5 @@ var UserDashboard = {
 
 $(function () {
     UserDashboard.init()
+    Password.init()
 })

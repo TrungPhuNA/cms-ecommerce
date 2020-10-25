@@ -2,13 +2,13 @@
 
 namespace Core\Admin\Http\Controllers\Blog;
 
-use App\Http\Requests\AdminMenuRequest;
 use App\Models\Blog\Article;
 use App\Models\Blog\Menu;
 use App\Models\Blog\SeoBlog;
 use App\Service\Menus\MenusService;
 use Carbon\Carbon;
 use Core\Admin\Http\Controllers\CmsAdminController;
+use App\Http\Requests\Admin\AdminMenuRequest;
 use Core\Admin\Services\RenderUrlSeoBlogServices;
 use Illuminate\Http\Request;
 

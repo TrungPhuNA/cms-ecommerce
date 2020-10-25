@@ -80,6 +80,12 @@ class UserPaymentCardController extends BaseUserController
     {
         CardUser::where([
             'cu_user_id' => get_data_user('web'),
+        ])->update([
+            'cu_main' => 0
+        ]);
+
+        CardUser::where([
+            'cu_user_id' => get_data_user('web'),
             'id' => $id
         ])->update([
             'cu_main' => 1
